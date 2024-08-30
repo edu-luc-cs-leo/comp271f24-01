@@ -16,6 +16,9 @@
  * Each part is delegated to a method for printing.
  */
 public class PerpetualCalendar {
+
+    // ------------------------------ CONSTANTS ---------------------------------
+
     private static final int DAY_BORDER_LENGTH = 7;
     private static final int DAY_CELL_WIDTH = 5;
     private static final int DAYS_IN_WEEK = 7;
@@ -28,7 +31,7 @@ public class PerpetualCalendar {
     private static final String BAR_BLANK_DAY_FILL = VERTICAL_BORDER + SPACES;
     private static final String BLANK_DAY_FILL_BAR = SPACES + VERTICAL_BORDER;
 
-    // Driver code
+    /** Driver code */
     public static void main(String[] args) {
         // A month that starts on Tuesday has 2 blanks in first week
         printCalendarMonth(6, 30);
