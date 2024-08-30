@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class EasyMultiplications {
 
     public static final int DEFAULT_BASE = 10;
@@ -15,7 +17,7 @@ public class EasyMultiplications {
      */
     public static int convertToScalar(int[] array, int base) {
         int scalar = 0;
-        int power = 0;
+        int power = 1;
         for (int i = array.length - 1; i >= 0; i--) {
             scalar += array[i] * power;
             power *= base;
@@ -48,7 +50,17 @@ public class EasyMultiplications {
 
     /** Helper convertToArray for default number base */
     public static int[] convertToArray(final int scalar) {
-        return convertToArray(scalar, scalar);
+        return convertToArray(scalar, DEFAULT_BASE);
     } // overloaded convertToArray
+
+    public static void main(String[] args) {
+        int[] x = { 1, 2, 3, 4 };
+        int[] y = { 5, 6, 7, 8 };
+        int xScalar = convertToScalar(x);
+        int yScalar = convertToScalar(y);
+        int product = xScalar * yScalar;
+        int[] result = convertToArray(product);
+        System.out.println(Arrays.toString(result));
+    }
 
 } // class EasyMultiplications
