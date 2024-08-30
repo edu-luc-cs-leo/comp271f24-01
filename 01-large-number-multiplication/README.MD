@@ -34,11 +34,13 @@ which corresponds to the product $1234\times 5678=7006652$.
 For this assignment you cannot use the convenient techniques shown in class [`EasyMultiplications`](./EasyMultiplications.java). In other words, we cannot convert the arrays into integers, multiply them, and convert the product back into an array.
 
 Instead, we can only perform single-digit arithmetic, i.e., additions, multiplications, division, and module between single digit numbers. We can use a carry; for example:
-$$\begin{align*}
+
+```math
+\begin{align*}
 6\times 7&:\\ &\textsf{carry digit}=4,\\& \textsf{product digit}=2, \ \text{or} \\ \\
 6+ 7&:\\ &\textsf{carry digit}=1,\\& \textsf{sum digit}=3, \ \text{etc}
 \end{align*}
-$$
+```
 
 The challenge in this problem is how to handle the partial products and their sum, for example:
 ```
