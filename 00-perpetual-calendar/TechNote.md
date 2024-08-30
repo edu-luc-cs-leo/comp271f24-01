@@ -62,15 +62,25 @@ else:
   run loop one more tim
 ```
 
+Another place where `if`-statements are hidden is the `Math.min` function used in the code. The function is basically a fully branched `if` statement, for example:
+```java
+int simpleMax(int a, int b) {
+  if (a > b)  // By the way, we should not write 
+    return b; //   methods with multiple returns
+  return a;   //   if we can write a single one only
+}
+```
+
 ## Assessment guidelines
 
 ### Red-level issues
 
-* Program does not compile/execute
-* Program has minimal or no comments
-* Program has non descriptive variable names
+* Program does not compile/execute.
+* Program has minimal or no comments.
+* Program has non descriptive variable names, such as single-letter names -- ok to use them for loop indices though.
 * Program has 3 or fewer methods.
 * Program uses if-statements.
+* You did not perform some analysis to identify the five parts of the calendar, or to explore the relation between the date of the first Sunday and the number of empty cells on the first row.
 
 ### Yellow level issues
 
