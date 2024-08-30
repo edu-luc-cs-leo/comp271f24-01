@@ -202,7 +202,6 @@ public class PerpetualCalendar {
      * 
      * @param firstSunday  int date of first Sunday in the month
      * @param numberOfDays int number of days in the month
-     * 
      */
     public static void printLastWeekFilledCells(int firstSunday, int numberOfDays) {
         int numberOfRows = (int) Math.ceil((numberOfDays - firstSunday + 1) / (double) DAYS_IN_WEEK);
