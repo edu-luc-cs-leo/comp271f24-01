@@ -33,7 +33,7 @@ which corresponds to the product $1234\times 5678=7006652$.
 
 For this assignment you cannot use the convenient techniques shown in class [`EasyMultiplications`](./EasyMultiplications.java). In other words, we cannot convert the arrays into integers, multiply them, and convert the product back into an array.
 
-Instead, we can only perform single-digit arithmetic, i.e., additions, multiplications, division, and module between single digit numbers. We can use a carry; for example:
+Instead, we can only perform single-digit arithmetic, i.e., additions, multiplications, division, and modulo between single digit numbers. We can use a carry; for example:
 
 ```math
 \begin{align*}
