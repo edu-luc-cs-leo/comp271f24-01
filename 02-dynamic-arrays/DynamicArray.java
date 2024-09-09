@@ -54,8 +54,8 @@ public class DynamicArray {
         final String NON_EXISTING = "COBOL";
         // Test data
         String[] testData = {"Java", "Python", "C", "C++", "Fortran"};
-        DynamicArray test = new DynamicArray(testData);
-        DynamicArray tset = new DynamicArray(null);
+        prep_DynamicArray test = new prep_DynamicArray(testData);
+        prep_DynamicArray tset = new prep_DynamicArray(null);
         // Naive testing - I am ashamed to do this but I need 
         // to keep things simple for now.
         String testContainsNullTarget = (!test.contains(null)) ? PASS : FAIL;
@@ -65,13 +65,19 @@ public class DynamicArray {
         String testGetNegative = (test.get(-1) == null) ? PASS : FAIL;
         String testGet = (test.get(0).equals(testData[0])) ? PASS : FAIL;
         String testGetOutOfBounds = (test.get(testData.length+1)==null) ? PASS : FAIL;
+        String testRemove = (testData[1].equals(test.remove(1))) ? PASS : FAIL;
+        String testRemoveNull = (test.remove(1) == null) ? PASS : FAIL;
+        String testRemoveOutOfBounds = (test.remove(testData.length+1) == null) ? PASS :FAIL;
         System.out.printf("\nTest for contains(null): ............... %s", testContainsNullTarget);
         System.out.printf("\nTest for contains on null foundation: .. %s", testContainsEmptyData);
         System.out.printf("\nTest for contains (existing): .......... %s", testContainsExisting);
         System.out.printf("\nTest for contains (non existing): ...... %s", testContainsNonExisting);
         System.out.printf("\nTest for get(-1): ...................... %s", testGetNegative);
         System.out.printf("\nTest for get(0): ....................... %s", testGet);
-        System.out.printf("\nTest for get(out of bounds): ........... %s\n\n", testGetOutOfBounds);
+        System.out.printf("\nTest for get(out of bounds): ........... %s\n", testGetOutOfBounds);
+        System.out.printf("\nTest for remove(1): .................... %s", testRemove);
+        System.out.printf("\nTest for remove(null): ................. %s", testRemoveNull);
+        System.out.printf("\nTest for remove(out of bounds): ........ %s\n\n", testRemoveOutOfBounds);
     } // method main
 
 } // class DynamicArray

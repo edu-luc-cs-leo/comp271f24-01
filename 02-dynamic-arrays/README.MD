@@ -45,3 +45,11 @@ Test for remove(1): .................... Pass
 Test for remove(null): ................. Pass
 Test for remove(out of bounds): ........ Pass
 ```
+
+## Reading material
+
+Our work for far is based on chapters 3, 4, 7, and 8 of the textbook used in COMP 170. The book is *not* required however for COMP 271. Instead, you may review the following material. And if you require additional reading resources, please let me know.
+
+* [Classes and Objects tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/index.html) from the Java documentation project. Skip the material for nested classes and enum(eration)s for now.
+
+* [Java in a Nutshell](https://learning.oreilly.com/library/view/java-in-a/9781098130992/), avaiable from the O'Reilly platform at no cost when you use your LUC email to login.
