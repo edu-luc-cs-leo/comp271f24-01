@@ -54,8 +54,8 @@ public class DynamicArray {
         final String NON_EXISTING = "COBOL";
         // Test data
         String[] testData = {"Java", "Python", "C", "C++", "Fortran"};
-        prep_DynamicArray test = new prep_DynamicArray(testData);
-        prep_DynamicArray tset = new prep_DynamicArray(null);
+        DynamicArray test = new DynamicArray(testData);
+        DynamicArray tset = new DynamicArray(null);
         // Naive testing - I am ashamed to do this but I need 
         // to keep things simple for now.
         String testContainsNullTarget = (!test.contains(null)) ? PASS : FAIL;
