@@ -45,29 +45,27 @@ public class DynamicArray {
         this(DEFAULT_SIZE)
     } // default constructor
 
-    
-
     /** Driver/test code */
     public static void main(String[] args) {
         final String PASS = "Pass";
         final String FAIL = "Fail";
         final String NON_EXISTING = "COBOL";
         // Test data
-        String[] testData = {"Java", "Python", "C", "C++", "Fortran"};
+        String[] testData = { "Java", "Python", "C", "C++", "Fortran" };
         DynamicArray test = new DynamicArray(testData);
         DynamicArray tset = new DynamicArray(null);
-        // Naive testing - I am ashamed to do this but I need 
+        // Naive testing - I am ashamed to do this but I need
         // to keep things simple for now.
         String testContainsNullTarget = (!test.contains(null)) ? PASS : FAIL;
-        String testContainsEmptyData =  (!tset.contains("Java")) ? PASS : FAIL;
+        String testContainsEmptyData = (!tset.contains("Java")) ? PASS : FAIL;
         String testContainsExisting = (test.contains(testData[1])) ? PASS : FAIL;
         String testContainsNonExisting = (!test.contains(NON_EXISTING)) ? PASS : FAIL;
         String testGetNegative = (test.get(-1) == null) ? PASS : FAIL;
         String testGet = (test.get(0).equals(testData[0])) ? PASS : FAIL;
-        String testGetOutOfBounds = (test.get(testData.length+1)==null) ? PASS : FAIL;
+        String testGetOutOfBounds = (test.get(testData.length + 1) == null) ? PASS : FAIL;
         String testRemove = (testData[1].equals(test.remove(1))) ? PASS : FAIL;
         String testRemoveNull = (test.remove(1) == null) ? PASS : FAIL;
-        String testRemoveOutOfBounds = (test.remove(testData.length+1) == null) ? PASS :FAIL;
+        String testRemoveOutOfBounds = (test.remove(testData.length + 1) == null) ? PASS : FAIL;
         System.out.printf("\nTest for contains(null): ............... %s", testContainsNullTarget);
         System.out.printf("\nTest for contains on null foundation: .. %s", testContainsEmptyData);
         System.out.printf("\nTest for contains (existing): .......... %s", testContainsExisting);
