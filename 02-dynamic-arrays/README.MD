@@ -24,6 +24,12 @@ Using the Java class `DynamicArray` provided here, write the following two metho
 
 * `public void delete(int index)` that removes the value from position `[index]` in the underlying array.
 
+**Last two methods added after class on 9/11/24.** These methods are due on 9/13/24 as well.
+
+* `public void insert(String string)` that adds a string in the `DynamicArray` object, overcoming the fixed size of the `foundation` array.
+
+* `private void resize()` that increases the size of the `foundation` array as needed to accomodate additional strings inserted to the object.
+
 Notice that the methods are *not static.*  
 
 Except for the contents of these two methods, you cannot modify the code provided here. 

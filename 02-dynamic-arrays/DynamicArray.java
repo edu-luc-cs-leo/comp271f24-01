@@ -76,6 +76,9 @@ public class DynamicArray {
         System.out.printf("\nTest for remove(1): .................... %s", testRemove);
         System.out.printf("\nTest for remove(null): ................. %s", testRemoveNull);
         System.out.printf("\nTest for remove(out of bounds): ........ %s\n\n", testRemoveOutOfBounds);
+        // If all is good, these two statemets will not crash the program
+        test.insert("Pascal");
+        test.insert("Basic");
     } // method main
 
 } // class DynamicArray
