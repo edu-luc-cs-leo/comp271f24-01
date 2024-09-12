@@ -2,7 +2,7 @@
 
 ## Part I: code review of previous assignment
 
-Using the solution and the technical note for the [previous assignment](../00-perpetual-calendar/), conduct a code review for your **integer multiplication** program. In your review:
+Using the solution and the technical note for the [previous assignment](https://github.com/edu-luc-cs-leo/comp271f24-01/tree/main/01-large-number-multiplication#part-ii-grade-school-multiplication), conduct a code review for your **integer multiplication** program. In your review:
 
 * describe any red, yellow, or green level issues with your code. For red and yellow issues, discuss what led to them;
 * suggest how the code could be improved;
