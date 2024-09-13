@@ -1,8 +1,8 @@
-# Assignment 02
+# Assignment 03
 
 ## Part I: code review of previous assignment
 
-Using the solution and the technical note for the [previous assignment](https://github.com/edu-luc-cs-leo/comp271f24-01/tree/main/01-large-number-multiplication#part-ii-grade-school-multiplication), conduct a code review for your **multiplication program**. In your review:
+Using the solution and the technical note for the [previous assignment](../02-dynamic-arrays/), conduct a code review for your **DynamicArray** program. In your review:
 
 * describe any red, yellow, or green level issues with your code. For red and yellow issues, discuss what led to them;
 * suggest how the code could be improved;
@@ -11,32 +11,17 @@ Using the solution and the technical note for the [previous assignment](https://
 
 Your review must exude professionalism: few (ideally no) typos, and nicely organized. You may produce it as a PDF file to attach to Sakai, or as plain text typed straight in the Sakai textbox. It may be a good idea if you used an editor to compose your review, then past the text in Sakai to avoid loss of data.
 
-## Part II: creating a data structure object
+## Part II: improving a data structure object
 
-Using the Java class `DynamicArray` provided here, write the following two methods:
+Using the posted solution for `DynamicArray`, add the following two methods:
 
-* `public boolean contains(String target)` that returns `true` if `target` is present in the underlying array and `false` if it isn't.
-* `public String get(int index)` that returns the string in position `[index]` in the underlying array or null if something wrong.
-
-**Two more methods added after class on 9/9/24.** These methods are also due on 9/13/24.
-
-* `public String remove(int index)` that returns the value in position `[index]` in the underlying array then removes that value from the array.
-
-* `public void delete(int index)` that removes the value from position `[index]` in the underlying array.
-
-**Last two methods added after class on 9/11/24.** These methods are due on 9/13/24 as well.
-
-* `public void insert(String string)` that adds a string in the `DynamicArray` object, overcoming the fixed size of the `foundation` array.
-
-* `private void resize()` that increases the size of the `foundation` array as needed to accomodate additional strings inserted to the object.
-
-Notice that the methods are *not static.*  
+* 
 
 Except for the contents of these two methods, you cannot modify the code provided here. 
 
 Your code must be in full compliance with the [Programmer's Pact](../misc/ProgrammerPact.pdf). You may not import any package except of `Arrays` and only to use ``Arrays.toString`` (not actually needed for this assignment). Also you may not use any `System` utilities except for `System.out` print statetements.
 
-Once you have the specified methods working properly, the code will compile and execute a few tests as shown below. 
+Once you have the specified methods working properly, the code will compile and execute a few tests as shown below. (As of 9/9/23 there are three new tests conducted for the `remove()` method.)
 
 ```
 Test for contains(null): ............... Pass
@@ -50,13 +35,6 @@ Test for get(out of bounds): ........... Pass
 Test for remove(1): .................... Pass
 Test for remove(null): ................. Pass
 Test for remove(out of bounds): ........ Pass
-```
-
-There are two more lines in `DynamicArray.main`, to validate your `insert` and `resize` methods:
-```java
-// If all is good, these two statemets will not crash the program
-test.insert("Pascal");
-test.insert("Basic");
 ```
 
 ## Reading material
