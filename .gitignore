@@ -1,10 +1,11 @@
 # duh
-.gitignore
+.git*
 
 # Leo's sandbox/prep work
 Sandbox/
 prep_*
 Solution_*
+Solutions_*
 
 # Compiled class file
 *.class

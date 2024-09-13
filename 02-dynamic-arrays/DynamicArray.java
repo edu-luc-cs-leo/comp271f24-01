@@ -64,7 +64,7 @@ public class DynamicArray {
         String testGet = (test.get(0).equals(testData[0])) ? PASS : FAIL;
         String testGetOutOfBounds = (test.get(testData.length + 1) == null) ? PASS : FAIL;
         String testRemove = (testData[1].equals(test.remove(1))) ? PASS : FAIL;
-        String testRemoveNull = (test.remove(1) == null) ? PASS : FAIL;
+        String testRemoveNull = (tset.remove(1) == null) ? PASS : FAIL;
         String testRemoveOutOfBounds = (test.remove(testData.length + 1) == null) ? PASS : FAIL;
         System.out.printf("\nTest for contains(null): ............... %s", testContainsNullTarget);
         System.out.printf("\nTest for contains on null foundation: .. %s", testContainsEmptyData);
