@@ -15,7 +15,7 @@ Your review must exude professionalism: few (ideally no) typos, and nicely organ
 
 Using the posted solution for [`DynamicArray`](./DynamicArray.java), add the following **three** methods:
 
-* `String toString()` that creates a textual representation of the object. For this method, you **cannot use** `Arrays.toString()` or any other imported utilities. ([Item 13](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch3.xhtml#lev12) from *Effective Java* is some good reading about `toString`; we illustrate a simple `toString` in class [`Person`](./Person.java) as well). <br/></br> The exact format and content of your `toString` method is up to you. Consider what the `DynamicArray` contains and how would you like to present to the world.
+* `String toString()` that creates a textual representation of the object. For this method, you **cannot use** `Arrays.toString()` or any other imported utilities. ([Item 13](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch3.xhtml#lev12) from *Effective Java* is some good reading about `toString`; we illustrated a simple `toString` in class [`Person`](./Person.java) as well). <br/></br> The exact format and content of your `toString` method is up to you. Consider what the `DynamicArray` contains and how would you like to present to the world.
 
 * `int index(String string)` that returns the array position of `string` in the underlying array. If there are multiple occurences of `string` in `this.foundation`, the method returns the position of the first occurrence. If there are none, the method shall return -1.
 
