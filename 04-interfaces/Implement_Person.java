@@ -14,8 +14,30 @@ public class Implement_Person {
             System.out.println("Frodo is same age as Bilbo");
         }
 
-        // Fully paramerized implementation
-        // (compliant with the Pact)
+        /*
+         * Fully paramerized implementation
+         * (compliant with the Pact)
+         * minimal (if any) redudancy in code
+         * 
+         * Based on the analysis of desired output. All three possible cases:
+         * 
+         * Frodo is younger than Bilbo
+         * Frodo is older than Bilbo
+         * Frodo is same as as Bilbo
+         * 
+         * The phrase pattern is more or less the same:
+         * 
+         * (invoking object) "is" (comparison outcome) (conjunction) (called object)
+         * 
+         * There are two possible conjunctions "than", for older-than and younger-than,
+         * and "as" for same age-as. This leads to a formatting string for four strings:
+         * 
+         * "%s is %s %s %s"
+         * 
+         * where each %s corresponds to invoking object, comparison outcome,
+         * conjunction, and called object respectively.
+         * 
+         */
 
         final String SUBORDINATING_CONJUCTION_SIMILAR = "as";
         final String SUBORDINATING_CONJUCTION_DIFFERENT = "than";
