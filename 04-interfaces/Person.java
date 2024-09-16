@@ -1,5 +1,4 @@
-public class Person {
-
+public class Person implements Comparable271 {
 
     private static final String DEFAULT_LAST_NAME = "LNU";
     private static final String DEFAULT_FIRST_NAME = "FNU";
@@ -17,10 +16,10 @@ public class Person {
 
     public Person(String firstName) {
         /*
-        this.firstName = firstName;
-        this.lastName = DEFAULT_LAST_NAME;
-        this.yearBorn = DEFAULT_YEAR_BORN;
-        */
+         * this.firstName = firstName;
+         * this.lastName = DEFAULT_LAST_NAME;
+         * this.yearBorn = DEFAULT_YEAR_BORN;
+         */
         this(firstName, DEFAULT_LAST_NAME, DEFAULT_YEAR_BORN);
     }
 
@@ -29,16 +28,22 @@ public class Person {
         this(DEFAULT_FIRST_NAME, DEFAULT_LAST_NAME, DEFAULT_YEAR_BORN);
     }
 
-    
-
-    // public String getFirstName() { return this.firstName; }
-
+    /**
+     * Implements the Comparable interface to determine the relative order of two
+     * persons based on their age.
+     * 
+     */
+    public int compareTo(Person other) {
+        return other.getYearBorn() - this.yearBorn;
+    } // method compareTo
 
     @Override
     public String toString() {
         return "Person [firstName=" + firstName + ", lastName=" + lastName + ", yearBorn=" + yearBorn + "]";
-    }
+    } // method toString
 
+    //------------------- AUTO GENERATED METHODS ------------------------------
+    
     public String getFirstName() {
         return this.firstName;
     }
@@ -63,8 +68,4 @@ public class Person {
         this.yearBorn = yearBorn;
     }
 
-
-
-    
 }
-
