@@ -1,10 +1,13 @@
 public class Implement_Person {
     public static void main(String[] args) {
+
+        // Two test objects
         Person frodo = new Person("Frodo", "Baggins", 2968);
         Person bilbo = new Person("Bilbo", "Baggins", 2890);
 
         // Direct demonstration of compareTo in blatant violation
-        // of the Programmer's Pact
+        // of the Programmer's Pact. The code below has magic 
+        // values and repeated content.
 
         if (frodo.compareTo(bilbo) > 0) {
             System.out.println("Frodo is older than Bilbo");
@@ -58,12 +61,7 @@ public class Implement_Person {
         } else {
             // objects are different
             subordinatingConjuction = SUBORDINATING_CONJUCTION_DIFFERENT;
-            // Assuming present object lesser
-            comparison = COMPARE_TO_NEGATIVE;
-            if (diff > 0) {
-                // Update if present object is greater
-                comparison = COMPARE_TO_POSITIVE;
-            }
+            comparison = (diff > 0) ? COMPARE_TO_POSITIVE : COMPARE_TO_NEGATIVE;
         }
         // Report findings
         System.out.printf(FMT_STRING,
@@ -71,5 +69,5 @@ public class Implement_Person {
                 comparison,
                 subordinatingConjuction,
                 bilbo.getFirstName());
-    }
-}
+    } // method main
+} // class Implement_Person
