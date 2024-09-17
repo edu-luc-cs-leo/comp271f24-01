@@ -147,6 +147,7 @@ contains a magic value and it should be replaced with a variable or a constant.
 * No Javadoc (In the next assignment the omission of Javadoc will become a yellow issue).
 * Program executes but results are not as expected and significantly different from specs.
 * Program has magic values.
+* Your code is excessively complicated.
 
 ### Green level issues
 
