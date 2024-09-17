@@ -49,9 +49,12 @@ public class Implement_Person {
         final String COMPARE_TO_NEGATIVE = "younger";
         final String FMT_STRING = "\n%s is %s %s %s\n";
 
+        // youger / older/ same age
         String comparison;
+        // than / as
         String subordinatingConjuction;
 
+        // How does object p1 compare to p2?
         int diff = p1.compareTo(p2);
 
         if (diff == 0) {
