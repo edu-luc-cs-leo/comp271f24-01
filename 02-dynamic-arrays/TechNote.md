@@ -40,7 +40,7 @@ for (int i = 0; i < this.foundation.length; i++) {
     }
 }
 ```
-will preserve the correct value of found throughout the loop. But imagine a situation where the match is established at `foundation[0]` and then we run another `length-1` iterations for absolutely no reason. We'd rather avoid this situation, and that's when the while-loop comes handy.
+will preserve the correct value of `found` throughout the loop. But imagine a situation where the match is established at `foundation[0]` and then we run another `length-1` iterations for absolutely no reason. We'd rather avoid this situation, and that's when the while-loop comes handy.
 
 ## Method `get`
 It is important to protect the method from *bad* index values. For example, `get(-1)` should not be allowed. Also `get(n)` where $n\geq\texttt{this.foundation.length}$ should not be allowed either. That's why we need to check first:
