@@ -18,9 +18,8 @@ public class Implement_Person {
         }
 
         /*
-         * Fully paramerized implementation
-         * (compliant with the Pact)
-         * minimal (if any) redudancy in code
+         * Fully parameterized implementation (compliant with the Pact) and with minimal
+         * (if any) redudancy in code
          * 
          * Based on the analysis of desired output. The output from all three possible
          * cases of comparison is one of the following statements:
