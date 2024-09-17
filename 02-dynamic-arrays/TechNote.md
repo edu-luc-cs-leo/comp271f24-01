@@ -3,7 +3,7 @@
 This was a rolling assignment that led to six methods added to class `DynamicArray`. The solution is presented here as `DynamicArray_Week02`. The six methods we added are described below. As I mentioned in class, your code is probably different than mine. It's ok. Focus on what you learn from the differences (and discuss the lessons in your code review).
 
 ## Method `contains`
-This is a straight forward traversal of a string array. Early in the assignment, you may have wrote a full array traversal, using the for-loop:
+This is a straight forward traversal of a string array. Early in the assignment, you may have wrote a full array traversal, using the while-loop:
 
 ```java
 int i = 0
@@ -22,6 +22,25 @@ this.foundation[this.occupancy-1]
 ```
 
 is the most recently added element in the underlying array; there is no need to search any further.
+
+If you used a for-loop **instead** of a while-loop, you risk one of the following situations:
+
+* `break` out of the loop when a match is found;
+* continue searching for a match after a match is found.
+
+Use of `break` is a violation of the Pact. 
+
+Searching for a match, after one has been found, is a waste of resources and should be avoided. For example:
+
+```java
+boolean found = false;
+for (int i = 0; i < this.foundation.length; i++) {
+    if (target.equals(this.foundation[i])) {
+        found = true;
+    }
+}
+```
+will preserve the correct value of found throughout the loop. But imagine a situation where the match is established at `foundation[0]` and then we run another `length-1` iterations for absolutely no reason. We'd rather avoid this situation, and that's when the while-loop comes handy.
 
 ## Method `get`
 It is important to protect the method from *bad* index values. For example, `get(-1)` should not be allowed. Also `get(n)` where $n\geq\texttt{this.foundation.length}$ should not be allowed either. That's why we need to check first:
