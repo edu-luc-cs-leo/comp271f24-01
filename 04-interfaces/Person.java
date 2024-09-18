@@ -1,4 +1,4 @@
-public class Person implements Comparable271 {
+public class Person implements Comparable271<Person> {
 
     private static final String DEFAULT_LAST_NAME = "LNU";
     private static final String DEFAULT_FIRST_NAME = "FNU";

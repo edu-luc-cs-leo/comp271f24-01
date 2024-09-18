@@ -15,7 +15,25 @@
  * 
  * will have initially room for 4 strings.
  */
-public class DynamicArray_Week04_InClass {
+public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_Week04_InClass> {
+
+    public int compareTo(DynamicArray_Week04_InClass other) {
+        // return this.foundation.length - other.getFoundation().length;
+        // return this.occupancy-other.getOccupancy();
+        int totalThis = 0;
+        int totalOther = 0;
+        for (String s : this.foundation) {
+            if (s != null) {
+                totalThis += s.length();
+            }
+        }
+        for (String s : other.getFoundation()) {
+            if (s != null) {
+                totalOther += s.length();
+            }
+        }
+        return totalThis - totalOther;
+    }
 
     /** Default size for underlying array */
     private static final int DEFAULT_SIZE = 4;
@@ -41,14 +59,15 @@ public class DynamicArray_Week04_InClass {
     /**
      * Array-based constructor -- used for testing.
      * 
-     * WARNING: SHALLOW ARRAY COPY
-     * 
      * @param data
      */
     public DynamicArray_Week04_InClass(String[] data) {
         this(DEFAULT_SIZE);
         if (data != null) {
-            this.foundation = data;
+            this.foundation = new String[data.length];
+            for (int i = 0; i < data.length; i++) {
+                this.foundation[i] = data[i];
+            }
             this.occupancy = data.length;
         }
     } // array-based constructor
@@ -59,6 +78,10 @@ public class DynamicArray_Week04_InClass {
     public DynamicArray_Week04_InClass() {
         this(DEFAULT_SIZE);
     } // default constructor
+
+    public String[] getFoundation() {
+        return this.foundation;
+    }
 
     /**
      * Checks if the specified string is present in the dynamic array.

@@ -1,8 +1,8 @@
 /*
-Interface is named Comparable271 to emphasize its use in COMP 271 and to 
-avoid any confusion with Java's industry-standard Comparable interface. 
+ * Interface is named Comparable271 to emphasize its use in COMP 271 and to 
+ * avoid any confusion with Java's industry-standard Comparable interface. 
 */
-public interface Comparable271 {
+public interface Comparable271<X> {
     /**
      * The method shall return a negative if the invoking is smaller in the
      * established natural ordering than the passed object. The specifics of the
@@ -14,5 +14,5 @@ public interface Comparable271 {
      *         established natural ordering, a value < 0 if this.person is less than
      *         the other.person, or 0 if this.object identical to other.object.
      */
-    int compareTo(Person other);
+    public int compareTo(X o);
 }
