@@ -15,25 +15,7 @@
  * 
  * will have initially room for 4 strings.
  */
-public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_Week04_InClass> {
-
-    public int compareTo(DynamicArray_Week04_InClass other) {
-        // return this.foundation.length - other.getFoundation().length;
-        // return this.occupancy-other.getOccupancy();
-        int totalThis = 0;
-        int totalOther = 0;
-        for (String s : this.foundation) {
-            if (s != null) {
-                totalThis += s.length();
-            }
-        }
-        for (String s : other.getFoundation()) {
-            if (s != null) {
-                totalOther += s.length();
-            }
-        }
-        return totalThis - totalOther;
-    }
+public class DynArr implements Comparable271<DynArr> {
 
     /** Default size for underlying array */
     private static final int DEFAULT_SIZE = 4;
@@ -49,7 +31,7 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
      * size must be a positive, non zero value. Otherwise the constructor uses the
      * default size value.
      */
-    public DynamicArray_Week04_InClass(int size) {
+    public DynArr(int size) {
         // If size <= 0 use default -- this is a good time to demo ternary operator
         size = (size > 0) ? size : DEFAULT_SIZE;
         this.foundation = new String[size];
@@ -57,11 +39,13 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
     } // full constructor
 
     /**
-     * Array-based constructor -- used for testing.
+     * Array-based constructor -- used for testing. Originally this constructor used
+     * a shallow array copy (foundation=data). The revised code below creates a deep
+     * copy of data into foundation.
      * 
      * @param data
      */
-    public DynamicArray_Week04_InClass(String[] data) {
+    public DynArr(String[] data) {
         this(DEFAULT_SIZE);
         if (data != null) {
             this.foundation = new String[data.length];
@@ -75,13 +59,39 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
     /**
      * Default constructor
      */
-    public DynamicArray_Week04_InClass() {
+    public DynArr() {
         this(DEFAULT_SIZE);
     } // default constructor
 
+    /**
+     * Accessor for this.foundation
+     */
     public String[] getFoundation() {
         return this.foundation;
-    }
+    } // method getFoundation
+
+    /**
+     * Implements the Comparable inteface. The method determines if the current
+     * object (this) is greater, same, or less than the called object (other). Size
+     * is computed as the number of characters in each object.
+     */
+    public int compareTo(DynArr other) {
+        // Character count for this object  // REDUNDANT CODE!!!
+        int totalThis = 0;
+        for (String s : this.foundation) {
+            if (s != null) {
+                totalThis += s.length();
+            }
+        }
+        // Character count for other object  // REDUNDANT CODE!!!
+        int totalOther = 0;
+        for (String s : other.getFoundation()) {
+            if (s != null) {
+                totalOther += s.length();
+            }
+        }
+        return totalThis - totalOther;
+    } // method compareTo
 
     /**
      * Checks if the specified string is present in the dynamic array.
@@ -217,7 +227,7 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
         final String NON_EXISTING = "COBOL";
         // Test data
         String[] testData = { "Java", "Python", "C", "C++", "Fortran" };
-        DynamicArray_Week04_InClass test = new DynamicArray_Week04_InClass(testData);
+        DynArr test = new DynArr(testData);
     } // method main
 
 } // class DynamicArray

@@ -19,7 +19,7 @@ Using the posted solution for [`DynamicArray`](./DynamicArray.java), add the fol
 
 * `int index(String string)` that returns the array position of `string` in the underlying array. If there are multiple occurences of `string` in `this.foundation`, the method returns the position of the first occurrence. If there are none, the method shall return -1.
 
-* `double usage()` that returns the percentage of the underlying array elements that are current not null. The number returned by the method must have at most 2 decimal digits. For example, if the underlying array has a length of 10 but occupancy is 3, the usage is 0.3333333333. Your method should return just 0.33. (Hint: `Math.round`)
+* `double usage()` that returns the percentage of the underlying array elements that are current not null. The number returned by the method must have at most 2 decimal digits. For example, if the underlying array has a length of 3 but occupancy is 1, the usage is 0.3333333333. Your method should return just 0.33. (Hint: `Math.round`) [In an earlier version I wrote 3/10 = 0.333 when in fact it's 0.3]
 
 Except for the contents of these three methods, you cannot modify the code provided here. 
 
