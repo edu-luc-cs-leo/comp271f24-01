@@ -2,7 +2,7 @@
 
 ## Part I: code review of previous assignment
 
-Using the [solution]) and the [technical note]() for the previous assignment, conduct a code review for your **improved DynamicArray** program. In your review:
+Using the [solution](../03-wow-more-dynamic-arrays/DynamicArray_Solution.java) and the [technical note](../03-wow-more-dynamic-arrays/TechNote.md) for the previous assignment, conduct a code review for your **improved DynamicArray** program. In your review:
 
 * describe any red, yellow, or green level issues with your code. For red and yellow issues, discuss what led to them;
 * suggest how the code could be improved;
@@ -13,7 +13,13 @@ Your review must exude professionalism: few (ideally no) typos, and nicely organ
 
 ## Part II: implementing interfaces
 
-...
+For this assignment you'll work with the following files:
+
+* [`SillyActions.java`](./SillyActions.java), an interface
+* [`Person.java`](./Person.java), an object class implementing the `Comparable` interface ([the real one](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html)) and the `SillyActions` interface.
+* [`PoemWords.java`](./PoemWords.java), a class with an array full of poetic words. You may access this array from other classes as `PoemWords.words`.
+
+Write your most creative code in Person, to deliver the methods specified in `SillyActions`.
 
 ## Reading material
 
