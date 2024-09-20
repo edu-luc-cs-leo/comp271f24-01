@@ -15,7 +15,7 @@ Your review must exude professionalism: few (ideally no) typos, and nicely organ
 
 For this assignment you'll work with the following files:
 
-* [`SillyActions.java`](./SillyActions.java), an interface
+* [`SillyActions.java`](./SillyActions.java), an interface.
 * [`Person.java`](./Person.java), an object class implementing the `Comparable` interface ([the real one](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html)) and the `SillyActions` interface.
 * [`PoemWords.java`](./PoemWords.java), a class with an array full of poetic words. You may access this array from other classes as `PoemWords.words`.
 
