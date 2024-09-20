@@ -73,25 +73,54 @@ public class DynArr implements Comparable271<DynArr> {
     /**
      * Implements the Comparable inteface. The method determines if the current
      * object (this) is greater, same, or less than the called object (other). Size
-     * is computed as the number of characters in each object.
+     * is computed as the number of characters in each object. The method treats
+     * null objects as zero length. The following comparisons are considered:
+     * 
+     * notNull.compareTo(null) ..... returns 1 because a not null object, even with
+     * zero characters has more substance than a null
+     * 
+     * notNull.compareTo(notNull) .. computers the actual character count for both
+     * objects and returns their difference
+     * 
+     * The comparison
+     * 
+     * null.compareTo(whatever)
+     * 
+     * is not considered because the method is called by an instance of class
+     * Dynamic Array (i.e., "this") and therefore the invoking object is never null.
+     * 
+     * @param other Dynamic Array object to compare this instance with
+     * @return a negative int if this instance is letter than the other object, 0
+     *         if the two objects have the same size, and a positive int when
+     *         this instance is greater than the other object.
      */
     public int compareTo(DynArr other) {
-        // Character count for this object  // REDUNDANT CODE!!!
-        int totalThis = 0;
-        for (String s : this.foundation) {
-            if (s != null) {
-                totalThis += s.length();
-            }
+        int diff = 1;
+        if (other != null) {
+            diff = countCharacters(this) - countCharacters(other);
         }
-        // Character count for other object  // REDUNDANT CODE!!!
-        int totalOther = 0;
-        for (String s : other.getFoundation()) {
-            if (s != null) {
-                totalOther += s.length();
-            }
-        }
-        return totalThis - totalOther;
+        return diff;
     } // method compareTo
+
+    /**
+     * Counts the characters in all strings of a Dynamic Array object. The method is
+     * private and can be called only from this.compareTo. The compareTo method
+     * ensures that countCharacters will never be called with a null arguments.
+     * 
+     * @param da Dynamic array object to count its characters (string lengths),
+     *           guaranteed to never be null.
+     * @return the total number of characters among all strings stored in the
+     *         object's underlying array.
+     */
+    private int countCharacters(DynArr da) {
+        int characterCount = 0;
+        for (String s : da.getFoundation()) {
+            if (da != null) {
+                characterCount += s.length();
+            }
+        }
+        return characterCount;
+    } // method countCharacters
 
     /**
      * Checks if the specified string is present in the dynamic array.
