@@ -11,6 +11,18 @@ Using the [solution](../03-wow-more-dynamic-arrays/DynamicArray_Solution.java) a
 
 Your review must exude professionalism: few (ideally no) typos, and nicely organized. You may produce it as a PDF file to attach to Sakai, or as plain text typed straight in the Sakai textbox. It may be a good idea if you used an editor to compose your review, then past the text in Sakai to avoid loss of data.
 
+## Part I extended: re-review of assignments 02 and 03
+*Added on 9/23/24, also due on 9/27/24.*
+
+Please go back to your assignments 02 and 03 and count the following:
+
+* How many **void** methods have a return statement
+* How many *non void* methods have more than one return statement.
+* How many times you use the calls `Arrays.copyOf` or `System.arraycopy`.
+
+If the total of these counts is greater than 2 and you did not discuss the issue in your code reviews, reply to the email with subject `Red issues are more frequent that we think` and let me know, no later than Friday 9/27/24.
+
+
 ## Part II: implementing interfaces
 
 For this assignment you'll work with the following files:
