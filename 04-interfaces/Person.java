@@ -1,4 +1,4 @@
-public class Person implements Comparable271<Person> {
+public class Person implements Comparable<Person>, SillyActions {
 
     private static final String DEFAULT_LAST_NAME = "LNU";
     private static final String DEFAULT_FIRST_NAME = "FNU";
@@ -15,11 +15,6 @@ public class Person implements Comparable271<Person> {
     }
 
     public Person(String firstName) {
-        /*
-         * this.firstName = firstName;
-         * this.lastName = DEFAULT_LAST_NAME;
-         * this.yearBorn = DEFAULT_YEAR_BORN;
-         */
         this(firstName, DEFAULT_LAST_NAME, DEFAULT_YEAR_BORN);
     }
 

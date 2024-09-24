@@ -15,25 +15,13 @@
  * 
  * will have initially room for 4 strings.
  */
-public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_Week04_InClass> {
+public class DynamicArray_Solution {
 
-    public int compareTo(DynamicArray_Week04_InClass other) {
-        // return this.foundation.length - other.getFoundation().length;
-        // return this.occupancy-other.getOccupancy();
-        int totalThis = 0;
-        int totalOther = 0;
-        for (String s : this.foundation) {
-            if (s != null) {
-                totalThis += s.length();
-            }
-        }
-        for (String s : other.getFoundation()) {
-            if (s != null) {
-                totalOther += s.length();
-            }
-        }
-        return totalThis - totalOther;
-    }
+    /** toString output for empty object */
+    private static final String EMPTY_OBJECT = ">> The object contains no data <<";
+    private static final String OPENING = "[ ";
+    private static final String CLOSING = "%s ]";
+    private static final String FMT_ELEMENT = "%s, ";
 
     /** Default size for underlying array */
     private static final int DEFAULT_SIZE = 4;
@@ -49,7 +37,7 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
      * size must be a positive, non zero value. Otherwise the constructor uses the
      * default size value.
      */
-    public DynamicArray_Week04_InClass(int size) {
+    public DynamicArray_Solution(int size) {
         // If size <= 0 use default -- this is a good time to demo ternary operator
         size = (size > 0) ? size : DEFAULT_SIZE;
         this.foundation = new String[size];
@@ -59,15 +47,14 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
     /**
      * Array-based constructor -- used for testing.
      * 
+     * WARNING: SHALLOW ARRAY COPY
+     * 
      * @param data
      */
-    public DynamicArray_Week04_InClass(String[] data) {
+    public DynamicArray_Solution(String[] data) {
         this(DEFAULT_SIZE);
         if (data != null) {
-            this.foundation = new String[data.length];
-            for (int i = 0; i < data.length; i++) {
-                this.foundation[i] = data[i];
-            }
+            this.foundation = data;
             this.occupancy = data.length;
         }
     } // array-based constructor
@@ -75,13 +62,9 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
     /**
      * Default constructor
      */
-    public DynamicArray_Week04_InClass() {
+    public DynamicArray_Solution() {
         this(DEFAULT_SIZE);
     } // default constructor
-
-    public String[] getFoundation() {
-        return this.foundation;
-    }
 
     /**
      * Checks if the specified string is present in the dynamic array.
@@ -210,38 +193,61 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
         }
     } // method insert
 
-    public String toString() {
-        String result = "[";
-
-        for (int i = 0; i < this.occupancy; i++) {
-            result += this.foundation[i];
-            if (i < this.occupancy - 1) {
-                result += ", ";
-            }
-        }
-        result += "]";
-        return result;
-    }
-
-    public int index(String string) {
+    /**
+     * Finds the position of the first instance of a string in the underlying array
+     * of the object.
+     * 
+     * @param string to look for
+     * @return position in underlying array or -1 if string not present.
+     */
+    public int indexOf(String string) {
         int index = -1;
-        for (int i = 0; i < this.occupancy; i++) {
-            if (this.foundation[i].equals(string)) {
-                index = i;
+        if (string != null) {
+            int i = 0;
+            while (i < this.foundation.length && index == -1) {
+                if (this.foundation[i] != null && this.foundation[i].equals(string)) {
+                    index = i;
+                }
+                i++;
             }
         }
         return index;
-    }
+    } // method indexOf
 
+    /**
+     * Ratio of how many elements of the underlying array are used.
+     * 
+     * @return the ratio of occupancy/length with two decimal digits.
+     */
     public double usage() {
-        double usage = 0.0;
-        for (int i = 0; i < this.occupancy; i++) {
-            if (this.foundation[i] != null) {
-                usage += 1.0;
+        return Math.round(
+                ((double) this.occupancy / (double) this.foundation.length) * 100.0) / 100.0;
+    } // method usage
+
+    /**
+     * Creates a textual representation of the object, overriding the default
+     * Object.toString method. This method uses a StringBuilder to assemble
+     * the result. If the underlying array contains no data, a special message
+     * is displayed.
+     * 
+     * @return textual representation of object as a string
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (this.foundation[0] == null) {
+            // if first element is null, everything else is null too
+            sb.append(EMPTY_OBJECT);
+        } else {
+            sb.append(OPENING);
+            // Loop leaves last elemement for later, to avoid an off-by-one error
+            for (int i = 0; i < this.occupancy - 1; i++) {
+                sb.append(String.format(FMT_ELEMENT, this.foundation[i]));
             }
+            // Last element doesn't need a comma afterwards
+            sb.append(String.format(CLOSING, this.foundation[this.occupancy - 1]));
         }
-        return usage;
-    }
+        return sb.toString();
+    } // method toString
 
     /** Driver/test code */
     public static void main(String[] args) {
@@ -250,7 +256,16 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
         final String NON_EXISTING = "COBOL";
         // Test data
         String[] testData = { "Java", "Python", "C", "C++", "Fortran" };
-        DynamicArray_Week04_InClass test = new DynamicArray_Week04_InClass(testData);
+        DynamicArray_Solution test = new DynamicArray_Solution(testData);
+        DynamicArray_Solution empty = new DynamicArray_Solution();
+        empty.insert(NON_EXISTING);
+        boolean indexExistsTest = true;
+        for (int i = 0; i < testData.length; i++) {
+            indexExistsTest = indexExistsTest && (i == test.indexOf(testData[i]));
+        }
+        boolean indexDoesntExistTest = (test.indexOf(NON_EXISTING) < 0);
+        System.out.printf("\nIndex exists test ........ %s", (indexExistsTest) ? PASS : FAIL);
+        System.out.printf("\nIndex not found test ..... %s\n", (indexDoesntExistTest) ? PASS : FAIL);
     } // method main
 
 } // class DynamicArray
