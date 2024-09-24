@@ -210,6 +210,39 @@ public class DynamicArray_Week04_InClass implements Comparable271<DynamicArray_W
         }
     } // method insert
 
+    public String toString() {
+        String result = "[";
+
+        for (int i = 0; i < this.occupancy; i++) {
+            result += this.foundation[i];
+            if (i < this.occupancy - 1) {
+                result += ", ";
+            }
+        }
+        result += "]";
+        return result;
+    }
+
+    public int index(String string) {
+        int index = -1;
+        for (int i = 0; i < this.occupancy; i++) {
+            if (this.foundation[i].equals(string)) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public double usage() {
+        double usage = 0.0;
+        for (int i = 0; i < this.occupancy; i++) {
+            if (this.foundation[i] != null) {
+                usage += 1.0;
+            }
+        }
+        return usage;
+    }
+
     /** Driver/test code */
     public static void main(String[] args) {
         final String PASS = "Pass";

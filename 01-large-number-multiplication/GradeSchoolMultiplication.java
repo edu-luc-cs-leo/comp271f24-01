@@ -3,6 +3,7 @@ public class GradeSchoolMultiplication {
     private static final int DEFAULT_BASE = 10;
 
     public static int[] multiply(final int[] x, final int[] y, final int base) {
+        return null;
     } // method multiply
 
     public static int[] multiply(final int[] x, final int[] y) {

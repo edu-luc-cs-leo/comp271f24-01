@@ -187,6 +187,65 @@ public class DynamicArray {
         }
     } // method insert
 
+    /**
+     * Returns a String representation of the DynamicArray object
+     * by traversing the DynamicArray and creating a new string separated
+     * by commas and surrounded by brackets.
+     *
+     * @return String: resultant String representation of DynamicArray object.
+     */
+    public String toString() {
+        String result = "[";
+
+        for (int i = 0; i < this.occupancy; i++) {
+            result += this.foundation[i];
+            if (i < this.occupancy - 1) {
+                result += ", ";
+            }
+        }
+        result += "]";
+        return result;
+    }
+
+    /**
+     * Returns the integer index (location) of the specified String
+     * in the DynamicArray. If the string is not found,
+     * -1 is returned.
+     *
+     * @param string: The string to search for.
+     * @return int: index of the String.
+     */
+    public int index(String string) {
+        int index = -1;
+        for (int i = 0; i < this.occupancy; i++) {
+            if (this.foundation[i].equals(string)) {
+                index = i;
+                return index;
+            }
+        }
+        return index;
+    }
+
+    /**
+     * Returns the percentage of DynamicArray elements that are not null.
+     *
+     * @return double: Percentage of non-null elements in DynamicArray.
+     */
+    public double usage() {
+        if (this.occupancy == 0) {
+            return 0.0;
+        }
+
+        int nonNull = 0;
+        for (int i = 0; i < this.occupancy; i++) {
+            if (this.foundation[i] != null) {
+                nonNull++;
+            }
+        }
+        double usage = (double) nonNull / this.occupancy;
+        return Math.round(usage * 100.0) / 100.0;
+    }
+
     /** Driver/test code */
     public static void main(String[] args) {
         final String PASS = "Pass";
@@ -194,6 +253,7 @@ public class DynamicArray {
         final String NON_EXISTING = "COBOL";
         // Test data
         String[] testData = { "Java", "Python", "C", "C++", "Fortran" };
+
         DynamicArray test = new DynamicArray(testData);
     } // method main
 
