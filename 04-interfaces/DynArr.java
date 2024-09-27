@@ -15,7 +15,7 @@
  * 
  * will have initially room for 4 strings.
  */
-public class DynArr implements Comparable271<DynArr> {
+public class DynArr implements Comparable<DynArr> {
 
     /** Default size for underlying array */
     private static final int DEFAULT_SIZE = 4;
