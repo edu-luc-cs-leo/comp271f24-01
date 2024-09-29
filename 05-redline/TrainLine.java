@@ -1,15 +1,25 @@
 public class TrainLine {
 
-    /** The name of the trainline */
+    /**
+     * The name of the trainline
+     */
     private String name;
-    /** Points to the first station in the trainline */
+    /**
+     * Points to the first station in the trainline
+     */
     private TrainStation head;
-    /** Points to the last station in the trainline */
+    /**
+     * Points to the last station in the trainline
+     */
     private TrainStation tail;
-    /** Keeps a running tally of train stations in the trainline */
+    /**
+     * Keeps a running tally of train stations in the trainline
+     */
     private int numberOfStations;
 
-    /** Full constructor */
+    /**
+     * Full constructor
+     */
     public TrainLine(String name, TrainStation head) {
         this.name = name;
         this.head = head;
@@ -22,7 +32,9 @@ public class TrainLine {
         this.tail = null;
     } // full constructor
 
-    /** Basic constructor */
+    /**
+     * Basic constructor
+     */
     public TrainLine(String name) {
         this(name, null);
     } // basic constructor
@@ -48,25 +60,66 @@ public class TrainLine {
         this.numberOfStations++;
     } // method add
 
-    /** Returns the number of stations in the line >= 0 */
+    /**
+     * Returns the number of stations in the line >= 0
+     */
     public int getNumberOfStations() {
         return numberOfStations;
     } // method getNumberOfStations
 
-    /*
-     * METHOD STUBS TO ENSURE CODE COMPILES. YOU WILL HAVE TO REWRITE THIS CODE TO
-     * MATCH THE SPECIFICATIONS AND ALSO YOU'LL HAVE TO WRITE METHOD isEmpty.
-     */
+
     public boolean contains(String name) {
-        return false;
+        boolean found = false;
+
+        int i = 0;
+        TrainStation cursor = this.head;
+        while (i < this.getNumberOfStations() && !found && cursor != null) {
+            if (cursor.getName().equals(name)) {
+                found = true;
+            }
+            cursor = cursor.getNext();
+            i++;
+
+
+        }
+        return found;
     }
 
     public int indexOf(String name) {
-        return -10;
+        int index = -1;
+
+        int i = 0;
+        TrainStation cursor = this.head;
+        while (i < this.getNumberOfStations() && cursor != null) {
+            if (cursor.getName().equals(name)) {
+                index = i;
+            }
+            cursor = cursor.getNext();
+            i++;
+
+        }
+        return index;
     }
 
     public String reverseList() {
-        return "niart";
+        String list = ""; // If trainLine has no stations, return empty String
+        if (this.head != null) {
+            // Iterate trainLine backwards
+            for (int i = this.getNumberOfStations() - 1; i >= 0; i--) {
+                TrainStation cur = this.head;
+                // Traverse to the ith station
+                for (int j = 0; j < i; j++) {
+                    cur = cur.getNext(); // Move to the next station
+                }
+                list += (cur.getName() + "\n"); // Add station to String
+            }
+        }
+
+        return list;
+    }
+
+    public boolean isEmpty() {
+        return this.head == null;
     }
 
     /*******************************************************************************
@@ -75,15 +128,15 @@ public class TrainLine {
      ******************************************************************************/
     public static void main(String[] args) {
         // A few station names
-        String[] stationNames = { "Howard", "Jarvis", "Morse",
-                "Loyola", "Granville", "Thorndale" };
+        String[] stationNames = {"Howard", "Jarvis", "Morse",
+                "Loyola", "Granville", "Thorndale"};
         // A populated trainline
         TrainLine redLineSB = new TrainLine("Red Line SB");
         for (String station : stationNames) {
             redLineSB.add(station);
         }
         // An empty trainline
-        prep_TrainLine brownLineSB = new prep_TrainLine("Brown Line SB");
+        TrainLine brownLineSB = new TrainLine("Brown Line SB");
         // A random station name
         String randomName = "Oak Park";
         // Guard tests
@@ -133,5 +186,18 @@ public class TrainLine {
         System.out.printf(formatContainsTestNonExisting, reportContainsTestNonExisting);
         System.out.printf(formatReverseListTest, reportReverseListTest);
         // ----------- YOU MAY ADD YOUR OWN TESTS BELOW THIS COMMENT LINE ---------------
+        TrainLine nathansTrain = new TrainLine("Nathans Train");
+        nathansTrain.add("One");
+        nathansTrain.add("Two");
+        nathansTrain.add("Three");
+        System.out.println(nathansTrain.contains("Two"));
+        System.out.println(nathansTrain.indexOf("Two"));
+        System.out.println();
+        TrainLine empty = new TrainLine("Empty");
+        System.out.println(empty.isEmpty());
+        empty.add("One");
+        System.out.println(empty.isEmpty());
+        System.out.println(redLineSB.reverseList());
+        System.out.println(redLineSB.isEmpty());
     } // method main
 } // class TrainLine
