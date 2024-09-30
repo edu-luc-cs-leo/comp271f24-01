@@ -43,8 +43,8 @@ boolean countains(String[] array, String target) {
     boolean found = (target != null)
     int i = 0;
     while (i < array.length && !found) {
-        if (target.equals(array[i])) {
-            found = true;
+        if (target.equals(array[i])) {  // *** These two statements 
+            found = true;               // *** can be combined in one
         }
         i++;
     }
@@ -62,12 +62,25 @@ boolean countains(String[] array, String target) {
     boolean found = (target != null)
     int i = 0;
     while (i < array.length && !found) {
-        found = (target.equals(array[i]));
-        i++;
+        found = (target.equals(array[i])); // *** Combined statements
+        i++;      
     }
     return found;
 }
 ```
+
+By the way, the code above can be simplified a bit more by combining the the two lines:
+```java
+found = (target.equals(array[i]));
+i++;      
+```
+into a single statement:
+
+```java
+found = (target.equals(array[i++]));
+```
+
+## Reasons to avoid magic values
 
 **Magic values lack of context.**  Hard-coded literal values have no obvious meaning by themselves. For example, seeing a number like 42 in the middle of a program doesn’t convey a purpose. The code becomes difficult to understand and maintain.
 
