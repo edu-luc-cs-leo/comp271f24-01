@@ -88,6 +88,6 @@ found = (target.equals(array[i++]));
 
 **Magic numbers make code less readable.** Surely we can write comments explaining what the magic value is but that adds clutter to the code. Sometimes it is best to replace comments with a thoughtfully named variable or constant.
 
-**Magic values make debugging more difficulty.** It is not always clear why a particular value was used in a program or how it relates to the overall logic of the program. This slows down debugging often to the point that it renders it ineffective.
+**Magic values make debugging more difficult.** It is not always clear why a particular value was used in a program or how it relates to the overall logic of the program. This slows down debugging often to the point that it renders it ineffective.
 
 **Magic values violate the DRY Principle.** In their book [*The Pragmatic Programmer*](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer),  Andy Hunt and Dave Thomas suggest that "every piece of knowledge must have a single, unambiguous, authoritative representation within a system". Use of magic values violates the "Don't Repeat Yourself" (DRY) principle. Defining the number as a constant (or a variable) in one place and using it throughout the code fulfills the requirement for *single, unambiguous, authoritative representation* and promotes consistency and clarity.
