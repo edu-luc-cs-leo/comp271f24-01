@@ -52,7 +52,36 @@ public class TrainLine {
     public int getNumberOfStations() {
         return numberOfStations;
     } // method getNumberOfStations
+    
+    public TrainStation remove(int position) {
+        TrainStation removedStation = null;
+        if (position >= 1 && position <= this.numberOfStations) {
+            // Operations are now safe
+            if (position == 1) {
+                // remove head
+                removedStation = this.head;
+                this.head = this.head.getNext();
 
+            } else {
+                // Find station prior to the one we want to remove
+                TrainStation cursor = this.head;
+                for (int i = 1; i < position - 1; i++) {
+                    cursor = cursor.getNext();
+                }
+                // Cursor should be at prior station
+                // Update tail
+                if (cursor.getNext() == this.tail) {
+                    this.tail = cursor;
+                }
+                removedStation = cursor.getNext();
+                cursor.setNext(cursor.getNext().getNext());
+            }
+            removedStation.setNext(null);
+            this.numberOfStations--;
+        }
+
+        return removedStation;
+    } // method remove
 
     public static void main(String[] args) {
         // A few station names
@@ -64,8 +93,9 @@ public class TrainLine {
             redLineSB.add(station);
         }
         // An empty trainline
-        prep_TrainLine brownLineSB = new prep_TrainLine("Brown Line SB");
+        TrainLine brownLineSB = new TrainLine("Brown Line SB");
         // A random station name
         String randomName = "Oak Park";
+        System.out.println(redLineSB.remove(2));
     } // method main
 } // class TrainLine
