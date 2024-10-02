@@ -83,7 +83,7 @@ public class TrainLine {
             redLineSB.add(station);
         }
         // An empty trainline
-        prep_TrainLine brownLineSB = new prep_TrainLine("Brown Line SB");
+        TrainLine brownLineSB = new TrainLine("Brown Line SB");
         // A random station name
         String randomName = "Oak Park";
         // Guard tests
