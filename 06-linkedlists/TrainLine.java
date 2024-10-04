@@ -53,6 +53,32 @@ public class TrainLine {
         return numberOfStations;
     } // method getNumberOfStations
 
+    public TrainStation remove(int position) {
+        TrainStation removedStation = null;
+        if (position >= 1 && position <= this.numberOfStations) {
+            // Commence safe operations
+            if (position == 1) {
+                // Remove head
+                removedStation = this.head;
+                this.head = this.head.getNext();
+            } else {
+                // Find the station prior to the one to be removed
+                TrainStation cursor = this.head;
+                for (int i = 1; i < position-1; i++) {
+                    cursor = cursor.getNext();
+                }
+                // cursor should be at the prior station
+                if (cursor.getNext() == this.tail) {
+                    this.tail = cursor;
+                }
+                removedStation = cursor.getNext();
+                cursor.setNext(cursor.getNext().getNext());
+            }
+            this.numberOfStations--;
+            removedStation.setNext(null);
+        }
+        return removedStation;
+    }
 
     public static void main(String[] args) {
         // A few station names
