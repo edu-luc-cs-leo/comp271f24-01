@@ -14,6 +14,26 @@ boolean contains(String name) {
 
 This way we avoid duplicating code (and effort). 
 
+Another challenging point in the assignment is in the `reverseList` method: how we produce the names of the stations in reverse order while traveling in the opposite direction? In the exampe of the CTA Red Line southbound, the first station is Howard, but we want it listed at the end. The second station is Jarvis and we want it listed second from the end, and so on. This is the equivalent of writing the names of the stations on a piece of paper, beginning from the bottom and moving up. 
+
+```text
+                                 Loyola     ...
+                      Morse      Morse      ...
+           Jarvis     Jarvis     Jarvis     ...
+Howard     Howard     Howard     Howard     ...
+```
+
+How can we achieve that with a string?
+
+Usually we add new data to the end of a string, e.g.,
+```java
+stationList = stationList + somethingNew;
+```
+For this problem we want to reverse the operation:
+```java
+stationList = somethingNew + stationList;
+```
+
 ## Assessment guidelines
 
 ### Red-level issues
