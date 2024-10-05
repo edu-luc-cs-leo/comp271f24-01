@@ -2,7 +2,7 @@
 
 ## Part I: code review of previous assignment
 
-Using the [solution](../05-redline/TrainLine_Solution.java) and the [technical note]() for the previous assignment, conduct a code review for your implementation of ``indexOf``, ``contains``, ``isEmpty`` and ``reverseList`` methods. In your review:
+Using the [solution](../05-redline/TrainLine_Solution.java) and the [technical note](../05-redline/TechNote.md) for the previous assignment, conduct a code review for your implementation of ``indexOf``, ``contains``, ``isEmpty`` and ``reverseList`` methods. In your review:
 
 * describe any red, yellow, or green level issues with your code. For red and yellow issues, discuss what led to them;
 * suggest how the code could be improved;
