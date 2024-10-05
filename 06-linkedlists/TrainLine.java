@@ -90,7 +90,7 @@ public class TrainLine {
             redLineSB.add(station);
         }
         // An empty trainline
-        TrainLine_Solution brownLineSB = new TrainLine_Solution("Brown Line SB");
+        prep_TrainLine brownLineSB = new prep_TrainLine("Brown Line SB");
         // A random station name
         String randomName = "Oak Park";
     } // method main

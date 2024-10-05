@@ -29,6 +29,7 @@ This way we avoid duplicating code (and effort).
 
 ### Yellow level issues
 
+* You are not using the keyword `this` when handling object fields in your code.
 * Program executes but results are not as expected and significantly different from specs.
 * Your code could be a bit more creative.
 
