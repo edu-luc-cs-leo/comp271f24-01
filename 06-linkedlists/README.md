@@ -16,7 +16,7 @@ Your review must exude professionalism: few (ideally no) typos, and nicely organ
 
 For this assignment you'll work with classes [`Trainline`](./TrainLine.java) and [`TrainStation`](./TrainStation.java). Most of the work will be done in `TrainLine`.
 
-The [Programmer's Pact](../misc/ProgrammerPact.pdf) is in full effect. You may not use any imports or any utilities from `System` except to print. (Exceptions: `StringBuilder` is now available to you but not re commended, in the interest of time. `ArrayList` is also available to use (`import java.util.ArrayList`)).  
+The [Programmer's Pact](../misc/ProgrammerPact.pdf) is in full effect. You may not use any imports or any utilities from `System` except to print. (Exceptions: `StringBuilder` is now available to you but not recommended, in the interest of time. `ArrayList` is also available to use (`import java.util.ArrayList`)).  
 
 
 ### Deliverable: method `void insert(String, int)`
