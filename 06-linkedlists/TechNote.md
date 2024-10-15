@@ -2,18 +2,6 @@
 
 This was the midterm assignment for the course.
 
-
-## method `isEmpty`
-
-This was possibly the easiest of the three methods. It's an one liner, really.
-```java
-public boolean isEmpty() {
-    return this.head == null;
-}
-```
-Alternatively, the method could evaluate and return ``this.numberOfStations==0``.
-
-
 ## method ``insert``
 This method may require a traversal of the train line. But first it's worth discussing its three distinct possibilities:
 
