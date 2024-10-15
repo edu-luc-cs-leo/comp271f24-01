@@ -1,0 +1,12 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.*;
+
+public class TrainLineTest {
+    @Test
+    public void testGetNumberOfStations() {
+        TrainLine test = new TrainLine("test");
+
+        assertEquals(0,test.getNumberOfStations());
+    }
+}
