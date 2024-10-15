@@ -63,6 +63,10 @@ This was the most difficult part of the assignment. It seems easy at the beginni
 * Arranging constants for everything
 * Measuring the length of each line proactively to ensure compliance with the 80-character limit.
 
+Many of you have arrived to similar partial solutions: your left and right arrows were printing correctly, and the lines were within limits. Then things started getting messy, as you tried to improve vertical alignment.
+
+If your partial solution is comparable to the partial solution I have posted here, it is fine. Of course we will make this perfect at some point.
+
 
 
 ## Assessment guidelines
