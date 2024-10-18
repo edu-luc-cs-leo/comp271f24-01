@@ -97,7 +97,7 @@ public class TrainLine {
 
     /**
      *
-     * Inserts a nwe station with the given name at the specified position in the train line.
+     * Inserts a new station with the given name at the specified position in the train line.
      * Position must be between 1 and the number of stations plus one.
      *
      * The method works as follows:
@@ -150,7 +150,7 @@ public class TrainLine {
 
         // Update the number of stations
         this.numberOfStations++;
-    }
+    } // method insert
 
 
     /**
