@@ -4,9 +4,9 @@ Arrays are linear structures but our imagination and creativity can bend them in
 
 To move *around* the array as if it were circular, we need a map like
 
+$$\texttt{array}[(\texttt{array.length}-1)+1]\mapsto \texttt{array}[0]
 $$
-c
-$$
+
 This can be accomplished with the *modulo* function since
 
 $$
