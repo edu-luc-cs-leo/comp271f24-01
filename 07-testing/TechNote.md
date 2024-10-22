@@ -20,7 +20,7 @@ The array reference
 ```java
 array[i % array.length]
 ```
-will always be within bound for any value of $i\geq 0$.
+will always be within array bounds for any value of $i\geq 0$.
 
 The circular queue requires two index pointers: one to the front of the queue and one to the back of the queue. When implementing a *linear* queue we move the data closer to the *front of the array*. In the circular implementation, we move the front of the queue to whichever place in the array it needs to be. Same for the back of the queue.
 
