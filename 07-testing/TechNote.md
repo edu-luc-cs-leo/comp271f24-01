@@ -1,6 +1,6 @@
 # Technical note: $\mathcal O (1)$ queue operations
 
-Arrays are linear structures but our imagination and creativity can bend them into circular shape. This creates a linear structure bringing the first position of an array immediately afer its last. In an array with $n$ elements, we can go around in circles moving from the last element in position $[n-1]$ to the next element in position $[0]$. Typically, that would involve getting to the last position and adding 1 to move to the next element. But $(n-1)+1$ will take us to position $[n]$ which, for an array with $n$ elements, is out-of-bounds.
+Arrays are linear structures but our imagination and creativity can bend them into circular shape. This creates a structure bringing the first position of an array immediately afer its last. In an array with $n$ elements, we can go around in circles moving from the last element in position $[n-1]$ to the next element in position $[0]$. Typically, that would involve getting to the last position and adding 1 to move to the next element. But $(n-1)+1$ will take us to position $[n]$ which, for an array with $n$ elements, is out-of-bounds.
 
 To move *around* the array as if it were circular, we need to map operations like
 
