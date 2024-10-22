@@ -28,10 +28,10 @@ public class FastQTest {
       test.add("B");
       test.add("C");
       test.add("D");
-      assertEquals(test.remove(), "A");
-      assertEquals(test.remove(), "B");
-      assertEquals(test.remove(), "C");
-      assertEquals(test.remove(), "D");
+      assertEquals("A", test.remove());
+      assertEquals("B",test.remove());
+      assertEquals("C", test.remove());
+      assertEquals("D", test.remove());
       assertNull(test.remove());
    }
 
