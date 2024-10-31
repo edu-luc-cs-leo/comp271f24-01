@@ -2,6 +2,7 @@
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
         "08-sorting",
+        "07-testing",
         "06-linkedlists",
         "05-redline",
         "04-interfaces",
@@ -9,6 +10,6 @@
         "02-dynamic-arrays",
         "01-large-number-multiplication",
         "00-perpetual-calendar",
-        "07-testing"
+        "09-hash"
     ]
 }
