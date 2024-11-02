@@ -1,26 +1,30 @@
+/**
+ * A simple binary search tree
+ */
 public class BST {
 
-    private Node root;
+    /** The entry point to the tree */
+    private TreeNode root;
+    /** Count of nodes in the tree */
+    private int nodesCount;
 
+    /** Default constructor */
+    public BST() {
+        this.root = null;
+        this.nodesCount = 0;
+    } // default constructor
+
+    /**
+     * Overloaded add to take a string, wrap it into a TreeNode object, and invoke
+     * the principal method that adds a note to the tree.
+     * 
+     * @param word String to add, as a node, to the tree
+     * 
+     */
     public void add(String word) {
-        this.add(new Node(word));
-    }
+        this.add(new TreeNode(word));
+    } // method add
 
-    public void add(Node node) {
-        if (node!=null) {
-        if (this.root == null) {
-            this.root = node;
-        } else {
-            Node cursor = this.root;
-            while (cursor != null) {
-                if (node.compareTo(cursor) < 0) {
-                    cursor = cursor.getLeft();
-                } else if (node.compareTo(cursor) > 0) {
-                    cursor = cursor.getRight;
-                }
-            }
-        }
-    }
-}
-
+    public void add(TreeNode node) {
+    } // method add
 }
