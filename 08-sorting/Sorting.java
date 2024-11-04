@@ -153,9 +153,12 @@ public class Sorting {
      * for variations in run conditions, we repeat this *numRuns* time, which serves
      * as a condition for the outer loop. All results are added to a csv file using a
      * fileWriter (I looked on GeeksForGeeks to figure out how to do this) and printed
-     * to the console.
+     * to the console. In regard to the fileWriter, I didn't do the try-catch logic
+     * as seen in the GeeksForGeeks tutorial as it did not seem necessary in this context.
+     * I was unable to proceed without having the exception throw in both this method
+     * and the main method.
      *
-     * @throws IOException
+     * @throws IOException:
      */
     public static void experiment() throws IOException {
         String fileName = "testData.csv";
