@@ -2,7 +2,7 @@
 
 ## Part I: code review of previous assignment
 
-Using the [solution]() and [technical note]() for the previous assignment, conduct a code review for your implementation of your performance testig method(s). In your review:
+Using the [solution](../08-sorting/DemoSorting.java) and [technical note](../08-sorting/TechNote.md) for the previous assignment, conduct a code review for your implementation of your performance testig method(s). In your review:
 
 * describe any red, yellow, or green level issues with your code. For red and yellow issues, discuss what led to them;
 * suggest how the code could be improved;
