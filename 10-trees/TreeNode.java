@@ -2,13 +2,33 @@ public class TreeNode implements Comparable<TreeNode> {
 
     /** The data payload of the node */
     private String word;
+
+
+
     /** Its left and right pointers */
     private TreeNode left;
+
     private TreeNode right;
+
+    public TreeNode getLeft() {
+        return left;
+    }
+
+    public TreeNode getRight() {
+        return right;
+    }
+
+    public void setRight(TreeNode right) {
+        this.right = right;
+    }
+
+    public void setLeft(TreeNode left) {
+        this.left = left;
+    }
 
     /**
      * Basic constructor creates a simple node with a payload and two null children.
-     * 
+     *
      * @param word
      */
     public TreeNode(String word) {
@@ -28,5 +48,5 @@ public class TreeNode implements Comparable<TreeNode> {
             result = this.getWord().compareTo(other.getWord());
         return result;
     } // method compareTo
-    
+
 }
