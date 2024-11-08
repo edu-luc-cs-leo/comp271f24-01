@@ -18,7 +18,7 @@ In class last week, we used chatGPT to write a [method that adds a note to a bin
 
 Review the code from chatGPT (by the first link above) and try to implement it in class `BST.java` here. Your code should have sufficient comments explaining what's the role of variable `parent`. Those comments should reflect your understanding of what `parent` does.
 
-## Part III (due 11/15/24)
+## Part III (will be assigned 11/8; due 11/15/24): delete a node.
 
 Class `BST.java` comes with methods that add data to a binary search tree and perform in-order traversals of the tree.
 
