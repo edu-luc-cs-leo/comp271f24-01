@@ -19,7 +19,7 @@ public class TreeNode implements Comparable<TreeNode> {
 
     /**
      * Implementation of Comparable using the nodes' content strings as basis for
-     * comparison. If the 
+     * comparison. If the
      */
     public int compareTo(TreeNode other) {
         int result = 1;
@@ -28,9 +28,18 @@ public class TreeNode implements Comparable<TreeNode> {
         return result;
     } // method compareTo
 
+    /**
+     * String representation of the TreeNode.
+     * 
+     * For now it just returns TreeNode.word, so it's identical -- in form -- to
+     * getWord(). In future versions we may want to write something more
+     * sophisticated, like the contents of the node along with some information
+     * about its two children.
+     */
     public String toString() {
-        return this.getWord();
+        return this.word;
     } // method toString
+
 
     /** Accesors and mutators */
 
@@ -61,4 +70,25 @@ public class TreeNode implements Comparable<TreeNode> {
     public void setRight(TreeNode node) {
         this.right = node;
     }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    /**
+     * Returns the number of children of a node
+     * @return 0, 1, or 2
+     * 
+     */
+    public int numberOfChildren() {
+        int count = 0;
+        if (this.hasLeft()) {
+            count++;
+        }
+        if (this.hasRight()) {
+            count++;
+        }
+        return count;
+    } // method numberOfChildren
+
 } // class TreeNode
