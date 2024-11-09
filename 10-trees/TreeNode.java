@@ -75,20 +75,4 @@ public class TreeNode implements Comparable<TreeNode> {
         this.word = word;
     }
 
-    /**
-     * Returns the number of children of a node
-     * @return 0, 1, or 2
-     * 
-     */
-    public int numberOfChildren() {
-        int count = 0;
-        if (this.hasLeft()) {
-            count++;
-        }
-        if (this.hasRight()) {
-            count++;
-        }
-        return count;
-    } // method numberOfChildren
-
 } // class TreeNode
