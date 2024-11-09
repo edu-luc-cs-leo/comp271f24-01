@@ -18,7 +18,9 @@ In class last week, we used chatGPT to write a [method that adds a note to a bin
 
 Review the code from chatGPT (by the first link above) and try to implement it in class `BST.java` here. Your code should have sufficient comments explaining what's the role of variable `parent`. Those comments should reflect your understanding of what `parent` does.
 
-## Part III (will be assigned 11/8; due 11/15/24): delete a node.
+## Part III, due 11/15/24: delete a node
+
+**WARNING: LOTS OF WORK** LOOK FOR SPECIAL OFFER BELOW!
 
 Class `BST.java` comes with methods that add data to a binary search tree and perform in-order traversals of the tree.
 
@@ -39,7 +41,15 @@ public TreeNode remove(String target) {
 } // helper method remove
 ```
 
+Also, modify class `TreeNode.java` with:
+
+* `int countChildren()` to return the number of children of a `TreeNode`
+
 As always, your code must be in compliance with the [Programmer's Pact](../misc/ProgrammerPact.pdf).
+
+### Special offer
+
+I will use Monday's *"lab hour"* to help you flesh out the `remove` method. This offer is only for those who come to class 11/11/24 with some code already sketched out for the method. No exceptions! If you do not have some work done for `TreeNode remove(String, TreeNode)` you cannot stay for the tutorial session. The lab hours are 9:05-10 AM for section 1, and 12:20-1:10 PM for section 2.
 
 ## Reading material
  

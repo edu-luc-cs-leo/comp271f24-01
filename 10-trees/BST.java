@@ -62,10 +62,13 @@ public class BST {
                 } else {
                     parent.setRight(newNode);
                 }
+                // Update the number of nodes in the tree
                 this.numberOfNodes++;
+                // Check if new node contains a string longer than the longest string
                 if (newNode.getWord().length() > this.longest.length()) {
                     this.longest = newNode.getWord();
                 }
+                // Check if new node has a string shorter than the shortest string
                 if (newNode.getWord().length() < this.shortest.length()) {
                     this.shortest = newNode.getWord();
                 }
@@ -95,7 +98,42 @@ public class BST {
         }
     } // helper method traverseInOrder
 
-    /* Accessors */
+    /**
+     * Helper method that initiates removal of a node with a specific string. The
+     * method calls an overloaded version of itself to do the actual digging. The
+     * overloaded method can focus on the tree itself (starting from this.root) or
+     * any subtree thereof.
+     * 
+     * @param target string contents of node we wish to remove
+     * @return the removed node; if no node found, method returns null
+     */
+    public TreeNode remove(String target) {
+        TreeNode removed = null;
+        if (target != null && this.root != null) {
+            removed = this.remove(target, this.root);
+        }
+        return removed;
+    } // helper method remove
+
+    /**************************************************************************
+     * METHOD STUBS FOR ASSIGNMENT DUE 11/15/24. THESE METHODS ARE INCOMPLETE AND,
+     * OBVIOUSLY, LACK DOCUMENTATION. AS PART OF THE ASSIGNMENT, YOU'LL PROVIDE THE
+     * NECESSARY COMMENTS AND, OF COURSE, SOME AWESOME CODE.
+     **************************************************************************/
+
+    public boolean contains(String target) {
+        return false;
+    } // method contains
+
+    public String toString() {
+        return "WRITE SOME GOOD CODE";
+    } // method toString
+
+    public TreeNode remove(String target, TreeNode belowNode) {
+        return null;
+    } // method remove
+
+    /******************************* Accessors *******************************/
 
     public int getNumberOfNodes() {
         return numberOfNodes;
