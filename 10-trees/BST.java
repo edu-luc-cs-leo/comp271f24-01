@@ -86,4 +86,94 @@ public class BST {
         }
 
     } // method add
+    public boolean contains(String target) {
+        boolean found = false;
+        if (root != null && target != null) {
+            TreeNode current = this.root;
+            while (current != null && !found) {
+                int comparison = target.compareTo(current.getWord());
+                if (comparison < 0) {
+                    current = current.getLeft();
+                } else if (comparison > 0) {
+                    current = current.getRight();
+                } else {
+                    found = true;
+                }
+            }
+        }
+        return found;
+
+    } // method contains
+
+    public TreeNode remove(String target) {
+        return remove(target, this.root);
+    }
+
+    // use num children method
+    public TreeNode remove(String target, TreeNode node) {
+        TreeNode removed = null;
+        if (target != null && node != null) {
+            TreeNode cursor = this.root;
+            TreeNode parent = null;
+            boolean found = false;
+            while (!found || cursor != null) {
+                if (target.equals(cursor.getWord())) {
+                    found = true;
+                } else if (target.compareTo(cursor.getWord()) < 0) {
+                    parent = cursor;
+                    cursor = cursor.getLeft();
+                } else {
+                    parent = cursor;
+                    cursor = cursor.getRight();
+                }
+            } // target has either been found or not found
+            if (found) {
+                removed = cursor; // we are at the correct node
+                if (cursor.numChildren() == 0) { // case for 0 children
+                    if (parent.getLeft().getWord().compareTo(target) == 0) { // if the node to the left of parent contains target
+                        parent.setLeft(null); // remove the node
+                    } else { // if the node to the right of parent contains target
+                        parent.setRight(null);
+                    }
+                } else if (cursor.numChildren() == 1) { // case for 1 child
+                    if (parent.getLeft().getWord().compareTo(target) == 0) { // if node to the left of parent contains target
+                        if (cursor.getLeft() != null) { // if the node to remove has nothing to the left
+                            parent.setLeft(cursor.getLeft());
+                        } else {
+                            parent.setLeft(cursor.getRight());
+                        }
+                    } else {
+                        if (cursor.getLeft() != null) {
+                            parent.setRight(cursor.getLeft());
+                        } else {
+                            parent.setRight(cursor.getRight());
+                        }
+                    }
+                } else {
+                    TreeNode successor = cursor.getRight();
+                    while (successor.getLeft() != null) {
+                        successor = successor.getLeft();
+                    } // found successor
+                    cursor.setRight(successor);
+                    remove(successor.getWord(), cursor.getRight());
+                }
+            } else {
+                removed = null;
+            }
+
+        } // check statement
+        return removed;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Binary Search Tree:\n");
+        sb.append("Total Nodes: ").append(numberOfNodes).append("\n");
+        sb.append("Longest Word: ").append(longest).append("\n");
+        sb.append("Shortest Word: ").append(shortest).append("\n");
+        sb.append("Array representation: [").append(root.getWord()).append(", ");
+        return sb.toString();
+    }
+
+
 }

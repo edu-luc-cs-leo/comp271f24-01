@@ -49,4 +49,15 @@ public class TreeNode implements Comparable<TreeNode> {
         return result;
     } // method compareTo
 
+    public int numChildren() {
+        int cnt = 0;
+        if (this.getLeft() != null) {
+            cnt++;
+        }
+        if (this.getRight() != null) {
+            cnt++;
+        }
+        return cnt;
+    }
+
 }
