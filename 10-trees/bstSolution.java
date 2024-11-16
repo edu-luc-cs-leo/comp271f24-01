@@ -3,7 +3,7 @@ import java.util.ArrayList;;
 /**
  * A simple binary search tree
  */
-public class BST_prep {
+public class bstSolution {
 
     /** The entry point to the tree */
     private TreeNode root;
@@ -120,6 +120,14 @@ public class BST_prep {
         return found;
     } // method contains
 
+    /**
+     * Helper method to initiate removal of a node from the tree The node is
+     * identified by its content.
+     * 
+     * @param target String content of node to remove.
+     * @return removed node or null if node with specified content not present in
+     *         tree.
+     */
     public TreeNode remove(String target) {
         TreeNode removed = null;
         if (target != null && this.root != null) {
@@ -158,14 +166,14 @@ public class BST_prep {
             // child or a node with two children
             if (cursor.numberOfChildren() == 0) {
                 // node to delete has no children, just nullify it
-                if (parent.getLeft() == cursor) {
+                if (parent.hasLeft()) {
                     parent.setLeft(null);
                 } else {
                     parent.setRight(null);
                 }
             } else if (cursor.numberOfChildren() == 1) {
                 // node to delete has only one child; connect it to its grandparent
-                if (parent.getLeft() == cursor) {
+                if (parent.hasLeft()) {
                     if (cursor.hasLeft()) {
                         parent.setLeft(cursor.getLeft());
                     } else {
@@ -178,22 +186,42 @@ public class BST_prep {
                         parent.setRight(cursor.getRight());
                     }
                 }
+                // Update shortest, longest, just in case
+                this.findLongestShortest();
             } else {
                 // Node to delete has two children; first find its successor
                 TreeNode succesor = cursor.getRight();
                 while (succesor.hasLeft()) {
                     succesor = succesor.getLeft();
                 }
-                System.out.printf("\nNode to delete: %s; succesor: %s",
-                        cursor.getWord(), succesor.getWord());
                 // Copy contents
                 cursor.setWord(succesor.getWord());
-                //
+                // Now remove the successor from the right subtree
                 this.remove(target, cursor.getRight());
             }
         }
         return removed;
     } // method remove
+
+    /**
+     * Traverses the entire tree in search of the longest and shortest string and
+     * updates the corresponding fields accordingly.
+     */
+    private void findLongestShortest() {
+        ArrayList<TreeNode> stack = new ArrayList<>();
+        stack.add(this.root);
+        while (stack.size() > 0) {
+            TreeNode cursor = stack.remove(0);
+            if (cursor.hasLeft())
+                stack.add(0, cursor.getLeft());
+            if (cursor.getWord().length() < this.shortest.length())
+                this.shortest = cursor.getWord();
+            if (cursor.getWord().length() > this.longest.length())
+                this.longest = cursor.getWord();
+            if (cursor.hasRight())
+                stack.add(0, cursor.getRight());
+        }
+    } // method findLongestShortest
 
     /**
      * Descriptive text representation; it returns information about the contents of
@@ -206,7 +234,8 @@ public class BST_prep {
         final String NODES_FMT = "There are %d nodes in the tree.\n";
         final String ROOT_FMT = "The tree is rooted at \"%s\".\n";
         final String SHORTEST_FMT = "The shortest entry is \"%s\" with %d characters.\n";
-        final String LONGEST_FMT = "The longest entry is \"%s\" with %d characters.";
+        final String LONGEST_FMT = "The longest entry is \"%s\" with %d characters.\n";
+        final String LEX_FMT = "Range of contents: [%s]-[%s]";
         StringBuilder sb = new StringBuilder();
         if (this.root == null) {
             sb.append(EMPTY);
@@ -215,15 +244,22 @@ public class BST_prep {
             sb.append(String.format(ROOT_FMT, this.root.getWord()));
             sb.append(String.format(SHORTEST_FMT, this.shortest, this.shortest.length()));
             sb.append(String.format(LONGEST_FMT, this.longest, this.longest.length()));
+            // Find the lexigographically smallest word
+            TreeNode cursor = this.root;
+            while (cursor.hasLeft()) {
+                cursor= cursor.getLeft();
+            }
+            String lexMin = cursor.getWord();
+            // Find the lexicographically largest word
+            cursor = this.root;
+            while (cursor.hasRight()) {
+                cursor = cursor.getRight();
+            }
+            String lexMax = cursor.getWord();
+            sb.append(String.format(LEX_FMT, lexMin, lexMax));
         }
         return sb.toString();
     } // method toString
-
-    public String displayTree() {
-        ArrayList<ArrayList<String>> contents = new ArrayList<>();
-        
-        return "";
-    }
 
     /* Accessors */
 

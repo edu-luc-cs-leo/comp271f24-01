@@ -1,6 +1,7 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
+        "10-trees",
         "09-hash",
         "08-sorting",
         "07-testing",
@@ -11,6 +12,6 @@
         "02-dynamic-arrays",
         "01-large-number-multiplication",
         "00-perpetual-calendar",
-        "10-trees"
+        "11-heaps"
     ]
 }

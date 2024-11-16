@@ -1,7 +1,7 @@
-public class BST_Implementation_prep {
+public class BST_Implementation {
 
     public static void main(String[] args) {
-        BST_prep demo = new BST_prep();
+        bstSolution demo = new bstSolution();
         String[] words = {
                 "now", "is", "the", "winter", "of", "our", "discontent",
                 "made", "glorious", "by", "this", "son", "of", "york",
