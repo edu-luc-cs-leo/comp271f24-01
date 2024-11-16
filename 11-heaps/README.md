@@ -33,6 +33,11 @@ myHeap.insert(newNode); // etc
 
 **Your assignment:** using `HuffmanEncoding.java` as a template, write a new class called `HuffmanEncodingWithHeap.java` that uses a `MinHeap` in methods `buildForest` and `buildTree`. Your `HuffmanEncoding.java` *should not* have the method `findSmallest`.
 
+The objective of your `HuffmanEncodingWithHeap.java` is to construct a Huffman tree. This is the binary tree with symbol nodes as its leaves. These nodes contain symbols and their frequencies, e.g., `'E':1`, `'H':1`, `'L':3`, etc. The tree also contains frequency-only nodes, i.e., nodes that have no symbol data but only a frequency value that corresponds to the sum of frequencies of their children. Every node in this tree that is not a leaf node, is a frequency-only node.
+
+In the given `HuffmanEncoding.java`, the Huffman tree is the remaining element in an arraylist of `HuffmanNode` objects. We remove two nodes at a time from that arraylist, combine them under a new node, and place that node back to the arraylist.
+
+In your `HuffmanEncodingWithHeap`, your HuffmanNodes must be stored as a `MinHeap`. You'll use the appropriate method from class `MinHeap` to remove the smallest nodes, then combine them under a new node, and that node will be added to your Huffman tree. It is up to you to determine how to manage this tree that is no longer represented as `ArrayList forest`.
 
 ## Reading material
  
