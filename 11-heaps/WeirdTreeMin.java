@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+/** A naive min heap for integers */
+
 public class WeirdTreeMin {
 
     /** A dynamic array to hold the contents of the complete binary tree */
