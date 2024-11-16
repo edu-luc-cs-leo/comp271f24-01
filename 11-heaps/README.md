@@ -37,7 +37,7 @@ The objective of your `HuffmanEncodingWithHeap.java` is to construct a Huffman t
 
 In the given `HuffmanEncoding.java`, the Huffman tree is the remaining element in an arraylist of `HuffmanNode` objects. We remove two nodes at a time from that arraylist, combine them under a new node, and place that node back to the arraylist.
 
-In your `HuffmanEncodingWithHeap`, your HuffmanNodes must be stored as a `MinHeap`. You'll use the appropriate method from class `MinHeap` to remove the smallest nodes, then combine them under a new node, and that node will be added to your Huffman tree. It is up to you to determine how to manage this tree that is no longer represented as `ArrayList forest`.
+In your `HuffmanEncodingWithHeap`, your HuffmanNodes must be stored as a `MinHeap`. You'll use the appropriate method from class `MinHeap` to remove the smallest nodes, then combine them under a new node, and that node will be added to the MinHeap. It is up to you to determine how to manage this tree that is no longer represented as `ArrayList forest`.
 
 ## Reading material
  
