@@ -124,7 +124,6 @@ public class MinHeap<E extends Comparable<E>> {
      * 
      * @return the first element of the arraylist always contains the smallest value
      */
-
     public E getMin() {
         return this.heap.get(0);
     } // method getMin
