@@ -95,7 +95,7 @@ public class MinHeap<E extends Comparable<E>> {
      * 
      * @param i position of the element to ensure it's properly ... heapified.
      */
-    public void floatUp(int i) {
+    private void floatUp(int i) {
         // Loop ends when item reaches the root of the tree (i==0) or when the heap
         // property parent < child is achieved earlier.
         while (i > 0 && heap.get(i).compareTo(heap.get(parentIndex(i))) < 0) {
@@ -113,7 +113,7 @@ public class MinHeap<E extends Comparable<E>> {
      * @param i position of the first of the two elements
      * @param j position of the second of the two elements
      */
-    public void swap(int i, int j) {
+    private void swap(int i, int j) {
         E temp = this.heap.get(i);
         this.heap.set(i, this.heap.get(j));
         this.heap.set(j, temp);
@@ -166,7 +166,7 @@ public class MinHeap<E extends Comparable<E>> {
      * @param i value in array to move to a new position that restores the heap
      *          property
      */
-    public void floatDn(int i) {
+    private void floatDn(int i) {
         int minIndex = i;
         // Check if node at [i] is greater than its left child -- this violates the
         // min-heap property and we may need to swap parent and left child.
