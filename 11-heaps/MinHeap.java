@@ -13,6 +13,16 @@ import java.util.ArrayList;
  * 
  * The minimum heap is stored in an array list.
  * 
+ * NOTE ON MAGIC VALUE 2: this data structure is abstracted as a complete binary
+ * tree whose nodes maintain the minimum heap property: parent values are always
+ * less than the values of their children. The data structure is implemented by
+ * an arraylist emulating the parent-children pointers as algebraic rules, e.g.
+ * 
+ * parent of position [i] = position [(i-1)/2]
+ * 
+ * Because these algebraic rules pertain to a <em>binary</em> tree, the literal
+ * 2 is not consider a magic value.
+ * 
  */
 public class MinHeap<E extends Comparable<E>> {
 
@@ -34,7 +44,7 @@ public class MinHeap<E extends Comparable<E>> {
     } // method size
 
     /**
-     * The position of the left child of node at position i in the array
+     * The position of the left child of node at position i in the array.
      * 
      * @param i parent index
      * @return index of parent's left child
