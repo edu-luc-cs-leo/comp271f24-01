@@ -123,9 +123,14 @@ public class MinHeap<E extends Comparable<E>> {
      * Obtain the minimum value in the arraylist without removing the element
      * 
      * @return the first element of the arraylist always contains the smallest value
+     *         or null if heap already empty
      */
     public E getMin() {
-        return this.heap.get(0);
+        E minValue = null;
+        if (this.heap.size() > 0) {
+            minValue = this.heap.get(0);
+        }
+        return minValue;
     } // method getMin
 
     /**
@@ -142,17 +147,20 @@ public class MinHeap<E extends Comparable<E>> {
      */
     public E removeMin() {
         // Item to return
-        E minValue = this.getMin();
-        E lastElement = this.heap.remove(this.heap.size() - 1);
-        // Take the last item out of the arraylist and place it in the beginning (since
-        // the element there is being returned as minValue)
-        if (!this.heap.isEmpty()) {
-            // Place the last element to the beginning of the heap. This will probably
-            // violate the min heap property.
-            this.heap.set(0, lastElement);
-            // Restore min heap property by pushing the newly placed value as far down as
-            // needed.
-            this.floatDn(0);
+        E minValue = null;
+        if (this.heap.size() > 0) {
+            minValue = this.getMin();
+            E lastElement = this.heap.remove(this.heap.size() - 1);
+            // Take the last item out of the arraylist and place it in the beginning (since
+            // the element there is being returned as minValue)
+            if (!this.heap.isEmpty()) {
+                // Place the last element to the beginning of the heap. This will probably
+                // violate the min heap property.
+                this.heap.set(0, lastElement);
+                // Restore min heap property by pushing the newly placed value as far down as
+                // needed.
+                this.floatDn(0);
+            }
         }
         return minValue;
     } // method removeMin
@@ -191,15 +199,7 @@ public class MinHeap<E extends Comparable<E>> {
 
     /** Simple string representation */
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        if (!this.heap.isEmpty()) {
-            int i = 0;
-            while (i < this.heap.size()) {
-                sb.append(String.format("[ %s ]", this.heap.get(i)));
-                i++;
-            }
-        }
-        return sb.toString();
+        return this.heap.toString();
     } // method toString
 
 } // class MinHeap
