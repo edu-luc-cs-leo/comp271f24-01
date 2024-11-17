@@ -187,10 +187,14 @@ public class MinHeap<E extends Comparable<E>> {
         if (right < this.heap.size() && this.heap.get(right).compareTo(this.heap.get(minIndex)) < 0) {
             minIndex = right;
         }
-        // After these two checks we'll know if node [i] is greater than either of its
-        // children, thus violating the min-heap property. We'll also know which child
-        // is the smallest, so that we can swap the larger parent below it. And we
-        // continue recursively until the min-heap property is restored.
+        /*
+         * After these two checks we'll know if node [i] is greater than either of its
+         * children, thus violating the min-heap property. We'll also know which child
+         * is the smallest, so that we can swap the larger parent below it. And we
+         * continue recursively until the min-heap property is restored. NOTE ON
+         * RECURSION: for large heaps, this method could potentially lead to a stack
+         * overflow. To avoid this, we can implement this method recursively.
+         */
         if (i != minIndex) {
             this.swap(i, minIndex);
             this.floatDn(minIndex);
