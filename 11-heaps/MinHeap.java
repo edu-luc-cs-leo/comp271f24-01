@@ -49,7 +49,7 @@ public class MinHeap<E extends Comparable<E>> {
      * @param i parent index
      * @return index of parent's left child
      */
-    public int leftChildIndex(int i) {
+    private int leftChildIndex(int i) {
         return 2 * i + 1;
     } // method leftChildIndex
 
@@ -59,7 +59,7 @@ public class MinHeap<E extends Comparable<E>> {
      * @param i parent index
      * @return index of parent's right child
      */
-    public int rightChildIndex(int i) {
+    private int rightChildIndex(int i) {
         return 2 * (i + 1);
     } // method rightChildIndex
 
@@ -69,7 +69,7 @@ public class MinHeap<E extends Comparable<E>> {
      * @param i child index
      * @return position of child's parent
      */
-    public int parentIndex(int i) {
+    private int parentIndex(int i) {
         return (i - 1) / 2;
     } // method parentIndex
 
