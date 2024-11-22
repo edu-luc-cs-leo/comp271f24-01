@@ -70,8 +70,8 @@ public class JustifyText {
                 // reset the local variables and continue
                 finalProduct.append(currentLine);
                 finalProduct.append(NEWLINE);
-                currentWidth = 0;
                 currentLine = new StringBuilder();
+                currentWidth = 0;
             }
             // Add the current word to the current line and update the current lines length.
             // We are adding +1 for the space following the newly added word.
