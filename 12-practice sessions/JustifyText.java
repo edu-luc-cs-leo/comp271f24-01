@@ -82,10 +82,13 @@ public class JustifyText {
     } // method justifyText
 
     public static void main(String[] args) {
+        // Opening line from Richard III by Richard Shakespeare
         String test = "Now is the winter of our discontent made glorious " +
                 "by this son of York and all the clouds that lourd " +
                 "over our house now in the deep bosom of the ocean lay";
         System.out.println(justifyText(test, 20));
+
+        // Last sentence from Cien Años de Soledad by Gabriel García Márquez
         test = "Sin embargo, antes de llegar al verso final ya había comprendido " +
                 "que no saldría jamás de ese cuarto,pues estaba previsto que la " +
                 "ciudad de los espejos (o los espejismos) sería arrasada por el " +
