@@ -61,7 +61,8 @@ public class JustifyText {
                  */
                 int spaceIndex = 0;
                 while (currentLine.length() <= lineWidth) {
-                    spaceIndex = currentLine.indexOf(String.valueOf(SPACE), spaceIndex);
+                    // StringBuilder.indexOf requires a string so ... valueOf(char)
+                    spaceIndex = currentLine.indexOf((String.valueOf(SPACE)), spaceIndex);
                     currentLine.insert(spaceIndex, SPACE);
                     spaceIndex += 2; // MAGIC VALUE -- fix later
                 }
