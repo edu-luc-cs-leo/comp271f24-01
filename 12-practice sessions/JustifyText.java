@@ -63,7 +63,7 @@ public class JustifyText {
                 while (currentLine.length() <= lineWidth) {
                     spaceIndex = currentLine.indexOf(String.valueOf(SPACE), spaceIndex);
                     currentLine.insert(spaceIndex, SPACE);
-                    spaceIndex += 2;
+                    spaceIndex += 2; // MAGIC VALUE -- fix later
                 }
                 // The current line is now fully justified. Add it to the output, add a newline,
                 // reset the local variables and continue
