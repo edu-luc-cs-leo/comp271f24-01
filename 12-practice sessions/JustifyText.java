@@ -91,13 +91,13 @@ public class JustifyText {
 
         // Last sentence from Cien Años de Soledad by Gabriel García Márquez
         test = "Sin embargo, antes de llegar al verso final ya había comprendido " +
-                "que no saldría jamás de ese cuarto,pues estaba previsto que la " +
+                "que no saldría jamás de ese cuarto, pues estaba previsto que la " +
                 "ciudad de los espejos (o los espejismos) sería arrasada por el " +
                 "viento y desterrada de la memoria de los hombres en el instante " +
                 "en que Aureliano Babilonia acabara de descifrar los pergaminos, " +
                 "y que todo lo escrito en ellos era irrepetible desde siempre y " +
                 "para siempre porque las estirpes condenadas a cien años de soledad " +
                 "no tenían una segunda oportunidad sobre la tierra";
-        System.out.println(justifyText(test, 50));
+        System.out.println(justifyText(test, 33));
     }
 }
