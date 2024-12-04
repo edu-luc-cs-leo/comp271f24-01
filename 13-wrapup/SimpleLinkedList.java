@@ -15,23 +15,23 @@
  * 1) Write method findMiddle() that finds and returns the middle node of
  * a SimpleListList. For example, if the SimpleLinkedList object is:
  * 
- * A -> null ... the middle mode is A
+ * A -> null ... the middle node is A
  * 
  * When the SimpleLinkedList object is:
  * 
- * A -> B --> null ... the middle mode is also A
+ * A -> B --> null ... the middle node is also A
  * 
  * When the SimpleLinkedList object is:
  * 
- * A -> B --> C --> null ... the middle mode is B
+ * A -> B --> C --> null ... the middle node is B
  * 
  * When the SimpleLinkedList object is:
  * 
- * A -> B --> C --> D --> null ... the middle mode is also B
+ * A -> B --> C --> D --> null ... the middle node is also B
  * 
  * When the SimpleLinkedList object is:
  * 
- * A -> B --> C --> D --> E --> null ... the middle mode is C, etc
+ * A -> B --> C --> D --> E --> null ... the middle node is C, etc
  * 
  * 
  * 2) Write a method called invert that returns the inverted version of the
@@ -86,7 +86,7 @@ public class SimpleLinkedList {
     } // method SimpleLinkedList.findMiddle
 
     /**
-     * Invert a linked list. 
+     * Invert a linked list.
      * 
      * For this method you may NOT use SimpleLinkedList.add
      */
@@ -128,11 +128,12 @@ public class SimpleLinkedList {
         } else {
             System.out.println("Method findMiddle not working as specified.");
         }
-        String leftToRight = demo.toString();
-        String rightToLeft = demo.invert().toString();
-        boolean test10 = leftToRight.length() == rightToLeft.length();
-        for (int i = 0; i < leftToRight.length(); i++) {
-            test10 = test10 && leftToRight.charAt(i) == rightToLeft.charAt(rightToLeft.length() - 1 - i);
+        String left = demo.toString();
+        String right = demo.invert().toString();
+        boolean test10 = left.length() == right.length();
+        for (int i = 0; i < left.length(); i++) {
+            test10 = test10
+                    && left.charAt(i) == right.charAt(right.length() - 1 - i);
         }
         if (test10) {
             System.out.println("Method invert works as specified.");
