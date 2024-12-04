@@ -1,7 +1,4 @@
 
-
-
-
 # Final Ungrading Reflection
 
 Based on your code reviews — especially the frequency and severity of red-level issues, — your class attendance, engagement, and participation, propose your final course grade.
@@ -20,7 +17,7 @@ You may propose one of these grades:
 
 ## Specifications for Your Final Reflection
 
-Reflect on the quality of your work and participation throughout the course. Your reflection should be 200-300 words, submitted as a plain text file (no Word or PDF), and uploaded to Sakai.
+Reflect on the quality of your work and participation throughout the course. Your reflection should be 200-300 words, submitted as a plain text file (no Word or PDF), and uploaded to Sakai. Please name the file `reflection.txt`.
 
 ### Key Points to Address
 1. **Class Participation:** Attendance directly affects participation. Missing five or more meetings impacts this area. Reflect on your activity in class, such as asking or answering questions, and overall engagement.

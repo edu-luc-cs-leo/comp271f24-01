@@ -85,7 +85,11 @@ public class SimpleLinkedList {
     public Node findMiddle() {
     } // method SimpleLinkedList.findMiddle
 
-    /** Invert a linked list */
+    /**
+     * Invert a linked list. 
+     * 
+     * For this method you may NOT use SimpleLinkedList.add
+     */
     public SimpleLinkedList invert() {
     } // method SimpleLinkedList.invert
 
