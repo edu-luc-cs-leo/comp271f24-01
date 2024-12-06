@@ -43,6 +43,8 @@
  * 
  * E --> D --> C --> B --> A --> null.
  * 
+ * For this method, you may NOT use arrays or arraylists or anything else other than the SimpleLinkedList data structure.
+ * 
  */
 
 public class SimpleLinkedList {
