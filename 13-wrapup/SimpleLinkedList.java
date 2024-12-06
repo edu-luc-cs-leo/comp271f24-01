@@ -12,7 +12,7 @@
  * modify any part of the class and you may not import ANYTHING. Your code
  * should be focused only within the two methods you are asked to write.
  * 
- * For this assignment, you may NOT use arrays or arraylists or anything else 
+ * For this assignment, you may NOT use arrays or arraylists or anything else
  * other than the SimpleLinkedList data structure.
  * 
  * 1) Write method findMiddle() that finds and returns the middle node of
@@ -46,6 +46,9 @@
  * 
  * E --> D --> C --> B --> A --> null.
  * 
+ * Remember, no arrays or arraylists or any other data structure except for
+ * SimpleLinkedList.
+ * 
  */
 
 public class SimpleLinkedList {
@@ -67,7 +70,9 @@ public class SimpleLinkedList {
     /** The only field in class SimpleLinkedList */
     Node head;
 
-    /** Add a new node to the linked list */
+    /**
+     * Add a new node to the linked list
+     */
     public void add(String data) {
         Node newNode = new Node();
         newNode.data = data;
@@ -84,14 +89,23 @@ public class SimpleLinkedList {
         }
     } // method add
 
-    /** Find and return the middle node of the linked list. */
+    /**
+     * Find and return the middle node of the linked list.
+     * 
+     * Remember, no arrays or arraylists or any other data structure except for
+     * SimpleLinkedList.
+     * 
+     */
     public Node findMiddle() {
     } // method SimpleLinkedList.findMiddle
 
     /**
      * Invert a linked list.
      * 
-     * For this method you may NOT use SimpleLinkedList.add
+     * Remember, no arrays or arraylists or any other data structure except for
+     * SimpleLinkedList.
+     * 
+     * For this method you may NOT use method SimpleLinkedList.add
      */
     public SimpleLinkedList invert() {
     } // method SimpleLinkedList.invert
