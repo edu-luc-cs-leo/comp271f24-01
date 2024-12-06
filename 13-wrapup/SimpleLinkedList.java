@@ -12,6 +12,9 @@
  * modify any part of the class and you may not import ANYTHING. Your code
  * should be focused only within the two methods you are asked to write.
  * 
+ * For this assignment, you may NOT use arrays or arraylists or anything else 
+ * other than the SimpleLinkedList data structure.
+ * 
  * 1) Write method findMiddle() that finds and returns the middle node of
  * a SimpleListList. For example, if the SimpleLinkedList object is:
  * 
@@ -42,8 +45,6 @@
  * method invert should return the object
  * 
  * E --> D --> C --> B --> A --> null.
- * 
- * For this method, you may NOT use arrays or arraylists or anything else other than the SimpleLinkedList data structure.
  * 
  */
 
