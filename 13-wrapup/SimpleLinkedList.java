@@ -97,6 +97,34 @@ public class SimpleLinkedList {
      * 
      */
     public Node findMiddle() {
+        // Prepare the return object
+        Node result = null;
+        // Proceed only if the linked list is not empty
+        if (this.head != null) {
+            // If the linked list has only one or two nodes, the answer is trivial; no need
+            // to traverse; just prepare to return the head as the middle node.
+            boolean hasOneNode = (this.head.next == null);
+            boolean hasTwoNodes = (hasOneNode && this.head.next.next == null);
+            if (hasOneNode || hasTwoNodes) {
+                result = this.head;
+            } else {
+                /*
+                 * The list has three or more nodes; best we traverse it using two pointers; A
+                 * slow pointer that moves one node at a time and a fast one that moves two
+                 * nodes at a time. When the fast pointer is at the end of the list, the slow
+                 * pointer is in the middle and that's the value we return.
+                 */
+                Node fast = this.head;
+                Node slow = this.head;
+                while (fast != null && fast.next != null) {
+                    fast = fast.next.next;
+                    slow = slow.next;
+                }
+                result = slow;
+            }
+        }
+        // Done
+        return result;
     } // method SimpleLinkedList.findMiddle
 
     /**
@@ -108,6 +136,27 @@ public class SimpleLinkedList {
      * For this method you may NOT use method SimpleLinkedList.add
      */
     public SimpleLinkedList invert() {
+        // Prepare the return object
+        SimpleLinkedList inverted = new SimpleLinkedList();
+        // Proceed only if current list is not empty
+        if (this.head != null) {
+            // Prepare to traverse the current linked list
+            Node current = this.head;
+            while (current != null) {
+                // For every node of the current list, create a new node
+                Node newNode = new Node();
+                // Copy the current node's content to the new node
+                newNode.data = current.data;
+                // Place the inverted list after the new node
+                newNode.next = inverted.head;
+                // Make the new node the head of the inverted list
+                inverted.head = newNode;
+                // Move to the next node of the current list
+                current = current.next;
+            }
+        }
+        // Done
+        return inverted;
     } // method SimpleLinkedList.invert
 
     /** String representation for the simple linked list */
